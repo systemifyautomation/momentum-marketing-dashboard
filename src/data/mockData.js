@@ -1,13 +1,14 @@
 // Mock Klaviyo-style campaign data for Momentum Marketing dashboard
 
 export const clients = [
-  { id: "all", name: "All Clients", industry: null, color: "#8B5CF6" },
-  { id: "clt_1", name: "Bright Skin Co.", industry: "Beauty & Skincare", color: "#EC4899" },
-  { id: "clt_2", name: "Peak Performance Gear", industry: "Sports & Fitness", color: "#F59E0B" },
-  { id: "clt_3", name: "Urban Eats Market", industry: "Food & Beverage", color: "#10B981" },
-  { id: "clt_4", name: "LuxHome Interiors", industry: "Home & Decor", color: "#3B82F6" },
-  { id: "clt_5", name: "TechNest Solutions", industry: "B2B Technology", color: "#6366F1" },
-  { id: "clt_6", name: "Bloom & Petal Boutique", industry: "Floral & Gifts", color: "#F43F5E" },
+  { id: "all", name: "All Clients",      color: "#4F46E5" },  // indigo
+  { id: "2",   name: "Live 2 Live",      color: "#DB2777" },  // pink
+  { id: "3",   name: "Steadfast",        color: "#D97706" },  // amber
+  { id: "4",   name: "CanineDrops",      color: "#059669" },  // emerald
+  { id: "5",   name: "Moments With Him", color: "#0EA5E9" },  // sky blue
+  { id: "6",   name: "Nuvary",           color: "#9333EA" },  // purple
+  { id: "7",   name: "Oxyfuel",          color: "#E11D48" },  // crimson
+  { id: "8",   name: "Sauna Protocol",   color: "#0891B2" },  // teal
 ];
 
 export const campaigns = [
@@ -196,12 +197,26 @@ export const monthlyTrends = [
 
 // Client performance comparison (used for bar chart)
 export const clientComparison = [
-  { client: "Bright Skin", openRate: 37.4, clickRate: 9.47, revenue: 48870, campaigns: 3 },
-  { client: "Peak Perf.", openRate: 38.6, clickRate: 9.38, revenue: 109430, campaigns: 3 },
-  { client: "Urban Eats", openRate: 38.9, clickRate: 10.53, revenue: 42840, campaigns: 3 },
-  { client: "LuxHome", openRate: 39.5, clickRate: 10.44, revenue: 53640, campaigns: 2 },
-  { client: "TechNest", openRate: 52.3, clickRate: 17.86, revenue: 171800, campaigns: 3 },
-  { client: "Bloom & Petal", openRate: 48.0, clickRate: 15.17, revenue: 48120, campaigns: 2 },
+  { client: "Bright Skin", openRate: 37.4, clickRate: 9.47, revenue: 48870, attributedRevenue: 24428, campaigns: 3 },
+  { client: "Peak Perf.", openRate: 38.6, clickRate: 9.38, revenue: 109430, attributedRevenue: 54683, campaigns: 3 },
+  { client: "Urban Eats", openRate: 38.9, clickRate: 10.53, revenue: 42840, attributedRevenue: 21408, campaigns: 3 },
+  { client: "LuxHome", openRate: 39.5, clickRate: 10.44, revenue: 53640, attributedRevenue: 26805, campaigns: 2 },
+  { client: "TechNest", openRate: 52.3, clickRate: 17.86, revenue: 171800, attributedRevenue: 85841, campaigns: 3 },
+  { client: "Bloom & Petal", openRate: 48.0, clickRate: 15.17, revenue: 48120, attributedRevenue: 24036, campaigns: 2 },
+];
+
+// Automated flows (email sequences)
+export const flows = [
+  { id: "fl_1", clientId: "clt_5", name: "Enterprise Welcome Series", type: "Welcome", revenue: 42300, recipients: 3210 },
+  { id: "fl_2", clientId: "clt_2", name: "Abandoned Cart Recovery", type: "Abandoned Cart", revenue: 38900, recipients: 2840 },
+  { id: "fl_3", clientId: "clt_5", name: "Trial Expiry Nurture", type: "Win-Back", revenue: 31200, recipients: 1890 },
+  { id: "fl_4", clientId: "clt_2", name: "VIP Customer Nurture", type: "VIP", revenue: 24100, recipients: 890 },
+  { id: "fl_5", clientId: "clt_4", name: "Browse Abandonment", type: "Browse Abandonment", revenue: 28640, recipients: 4120 },
+  { id: "fl_6", clientId: "clt_1", name: "Welcome Series", type: "Welcome", revenue: 19480, recipients: 3640 },
+  { id: "fl_7", clientId: "clt_6", name: "Post-Purchase Series", type: "Post-Purchase", revenue: 17320, recipients: 1640 },
+  { id: "fl_8", clientId: "clt_3", name: "Win-Back Flow", type: "Win-Back", revenue: 15200, recipients: 2150 },
+  { id: "fl_9", clientId: "clt_1", name: "Birthday Campaign", type: "Birthday", revenue: 12800, recipients: 1240 },
+  { id: "fl_10", clientId: "clt_3", name: "Welcome Series", type: "Welcome", revenue: 11400, recipients: 1820 },
 ];
 
 // Recent activity feed
