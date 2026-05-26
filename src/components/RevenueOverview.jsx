@@ -49,7 +49,6 @@ export default function RevenueOverview({ data }) {
           <div className="rov-hero__label">Total revenue</div>
           <div className="rov-hero__trend">
             <TrendPill value={data.revenueTrend} />
-            <span className="rov-hero__trend-text">vs. previous period</span>
           </div>
         </div>
         <div className="rov-divider--v" />
@@ -60,7 +59,6 @@ export default function RevenueOverview({ data }) {
           </div>
           <div className="rov-hero__trend">
             <TrendPill value={data.attributedTrend} />
-            <span className="rov-hero__trend-text">vs. previous period</span>
           </div>
         </div>
       </div>

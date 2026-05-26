@@ -171,3 +171,54 @@ export function clearCache() {
   _campaignsCache = null;
   _flowsCache     = null;
 }
+
+// ── Clients ──────────────────────────────────────────────────────────
+
+const CLIENTS_WEBHOOK_URL = import.meta.env.VITE_CLIENTS_WEBHOOK_URL ?? "";
+
+// Colour palette — assigned by index for clients returned by the webhook
+const CLIENT_COLORS = [
+  "#DB2777", // pink
+  "#D97706", // amber
+  "#059669", // emerald
+  "#0EA5E9", // sky blue
+  "#9333EA", // purple
+  "#E11D48", // crimson
+  "#0891B2", // teal
+  "#F97316", // orange
+  "#10B981", // green
+  "#6366F1", // indigo
+];
+
+let _clientsCache = null;
+
+/**
+ * Load the client list from the n8n webhook.
+ * Expects the webhook to return an array of objects with at least { id, name }.
+ * Falls back to an empty list (plus "All Clients") if the fetch fails.
+ */
+export async function getClients() {
+  if (_clientsCache) return _clientsCache;
+
+  try {
+    const res = await fetch(CLIENTS_WEBHOOK_URL);
+    if (!res.ok) throw new Error(`Clients webhook error: ${res.status}`);
+    const raw = await res.json();
+
+    const clientList = raw.map((c, i) => ({
+      id:    String(c.id ?? c.client_id ?? i),
+      name:  c.name ?? c.client_name ?? `Client ${i + 1}`,
+      color: CLIENT_COLORS[i % CLIENT_COLORS.length],
+    }));
+
+    _clientsCache = [
+      { id: "all", name: "All Clients", color: "#4F46E5" },
+      ...clientList,
+    ];
+  } catch (err) {
+    console.error("Failed to load clients from webhook:", err);
+    _clientsCache = [{ id: "all", name: "All Clients", color: "#4F46E5" }];
+  }
+
+  return _clientsCache;
+}

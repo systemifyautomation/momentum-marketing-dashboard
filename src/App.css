@@ -188,6 +188,21 @@ a { text-decoration: none; color: inherit; }
 
 .topbar__right { display: flex; align-items: center; gap: 12px; }
 
+.btn-new-client {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.btn-new-client:hover { opacity: 0.8; }
+
 .topbar__period {
   display: flex;
   align-items: center;

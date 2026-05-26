@@ -2,8 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { BarChart2 } from "lucide-react";
 import RevenueOverview from "./components/RevenueOverview";
 import { ClientRevenueChart } from "./components/Charts";
-import { clients } from "./data/mockData";
-import { getCampaigns, getFlows } from "./services/dataService";
+import { getCampaigns, getFlows, getClients } from "./services/dataService";
 import "./App.css";
 
 // Actual store total revenue per client (hardcoded until API provides it)
@@ -19,13 +18,15 @@ const TOTAL_REVENUES = {
 
 export default function App() {
   const [activeClient, setActiveClient] = useState("all");
+  const [clients, setClients] = useState([{ id: "all", name: "All Clients", color: "#4F46E5" }]);
   const [allCampaigns, setAllCampaigns] = useState([]);
   const [allFlowMessages, setAllFlowMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([getCampaigns(), getFlows()])
-      .then(([campaigns, flowMessages]) => {
+    Promise.all([getClients(), getCampaigns(), getFlows()])
+      .then(([clientList, campaigns, flowMessages]) => {
+        setClients(clientList);
         setAllCampaigns(campaigns);
         setAllFlowMessages(flowMessages);
       })
@@ -206,6 +207,14 @@ export default function App() {
             </div>
           </div>
           <div className="topbar__right">
+            <a
+              className="btn-new-client"
+              href="https://momentummarketing.app.n8n.cloud/form/d608769e-0296-49cd-bd11-76aae470501e"
+              target="_blank"
+              rel="noreferrer"
+            >
+              + New Client
+            </a>
             <div className="topbar__period">
               <span>Last 30 days</span>
             </div>
