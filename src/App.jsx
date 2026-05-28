@@ -124,16 +124,18 @@ export default function App() {
     };
   }, [filteredCampaigns, aggregatedFlows, allFlowMessages, activeClient, clientTotalRevenue]);
 
-  // Top 5 campaigns by revenue
+  // Top 10 campaigns by revenue
   const topCampaigns = useMemo(
-    () => [...filteredCampaigns].sort((a, b) => b.revenue - a.revenue).slice(0, 5),
+    () => [...filteredCampaigns].sort((a, b) => b.revenue - a.revenue).slice(0, 10),
     [filteredCampaigns]
   );
 
-  // Top 5 flows by aggregated revenue
+  // Top 10 flow messages by revenue
   const topFlows = useMemo(
-    () => [...aggregatedFlows].sort((a, b) => b.revenue - a.revenue).slice(0, 5),
-    [aggregatedFlows]
+    () => [...(activeClient ? allFlowMessages.filter((m) => m.clientId === activeClient) : [])]
+      .sort((a, b) => b.revenue - a.revenue)
+      .slice(0, 10),
+    [allFlowMessages, activeClient]
   );
 
   const activeClientData = clients.find((c) => c.id === activeClient);
@@ -312,71 +314,76 @@ export default function App() {
 
           <div className="dash-col">
             <RevenueOverview data={revOverview} />
-            <div className="top-lists">
 
-              {/* Top Campaigns */}
-              <div className="rank-card">
-                <div className="rank-card__header">
-                  <h3>Top Campaigns</h3>
-                  <p>By attributed revenue</p>
-                </div>
-                <ol className="rank-list">
+              <div className="top-lists">
+
+                {/* Top 10 Campaigns */}
+                <div className="rank-card">
+                  <div className="rank-card__header">
+                    <h3>Top Campaigns</h3>
+                    <p>By revenue · top 10</p>
+                  </div>
                   {topCampaigns.length === 0 ? (
-                    <li className="rank-item rank-item--empty">No campaigns in the last 30 days.</li>
-                  ) : topCampaigns.map((c, i) => {
-                    const cl = clients.find((x) => x.id === c.clientId);
-                    return (
-                      <li key={c.id} className="rank-item">
-                        <span className="rank-item__num">{i + 1}</span>
-                        <div className="rank-item__info">
-                          <span className="rank-item__name">{c.name}</span>
-                          <span className="rank-item__meta">
-                            <span className="rank-item__dot" style={{ background: cl?.color }} />
-                            {cl?.name}
-                          </span>
-                        </div>
-                        <span className="rank-item__value">
-                          ${Math.round(c.revenue).toLocaleString()}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-
-              {/* Top Flows */}
-              <div className="rank-card">
-                <div className="rank-card__header">
-                  <h3>Top Flows</h3>
-                  <p>By attributed revenue</p>
+                    <p className="simple-empty">No campaigns for this period.</p>
+                  ) : (
+                    <table className="simple-table">
+                      <thead><tr>
+                        <th>Campaign</th>
+                        <th className="n">Sent</th>
+                        <th className="n">Open</th>
+                        <th className="n">Click</th>
+                        <th className="n">Revenue</th>
+                      </tr></thead>
+                      <tbody>
+                        {topCampaigns.map((c, i) => (
+                          <tr key={c.id}>
+                            <td><span className="simple-rank">{i + 1}</span>{c.name}</td>
+                            <td className="n">{c.recipients.toLocaleString()}</td>
+                            <td className="n">{c.openRate}%</td>
+                            <td className="n">{c.clickRate}%</td>
+                            <td className="n rev">${c.revenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
                 </div>
-                <ol className="rank-list">
+
+                {/* Top 10 Flows */}
+                <div className="rank-card">
+                  <div className="rank-card__header">
+                    <h3>Top Flows</h3>
+                    <p>By revenue · top 10</p>
+                  </div>
                   {topFlows.length === 0 ? (
-                    <li className="rank-item rank-item--empty">No flows in the last 30 days.</li>
-                  ) : topFlows.map((f, i) => {
-                    const cl = clients.find((x) => x.id === f.clientId);
-                    return (
-                      <li key={f.id} className="rank-item">
-                        <span className="rank-item__num">{i + 1}</span>
-                        <div className="rank-item__info">
-                          <span className="rank-item__name">{f.name}</span>
-                          <span className="rank-item__meta">
-                            <span className="rank-item__dot" style={{ background: cl?.color }} />
-                            {cl?.clientName ?? cl?.name}
-                          </span>
-                        </div>
-                        <span className="rank-item__value">
-                          ${Math.round(f.revenue).toLocaleString()}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ol>
+                    <p className="simple-empty">No flows for this period.</p>
+                  ) : (
+                    <table className="simple-table">
+                      <thead><tr>
+                        <th>Flow</th>
+                        <th className="n">Sent</th>
+                        <th className="n">Open</th>
+                        <th className="n">Click</th>
+                        <th className="n">Revenue</th>
+                      </tr></thead>
+                      <tbody>
+                        {topFlows.map((f, i) => (
+                          <tr key={f.id}>
+                            <td><span className="simple-rank">{i + 1}</span>{f.name}</td>
+                            <td className="n">{(f.delivered ?? f.recipients ?? 0).toLocaleString()}</td>
+                            <td className="n">{f.openRate}%</td>
+                            <td className="n">{f.clickRate}%</td>
+                            <td className="n rev">${f.revenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
+
               </div>
 
             </div>
-          </div>
-
           )} {/* end loading conditional */}
 
         </div>

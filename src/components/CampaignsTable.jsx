@@ -55,7 +55,7 @@ export default function CampaignsTable({ campaigns, clients }) {
     { key: "recipients", label: "Recipients", sortable: true, width: "9%" },
     { key: "openRate", label: "Open Rate", sortable: true, width: "9%" },
     { key: "clickRate", label: "Click Rate", sortable: true, width: "9%" },
-    { key: "revenue", label: "Revenue", sortable: true, width: "9%" },
+    { key: "revenue", label: "Placed Order", sortable: true, width: "11%" },
     { key: "status", label: "Status", sortable: true, width: "9%" },
   ];
 
@@ -149,7 +149,14 @@ export default function CampaignsTable({ campaigns, clients }) {
                   )}
                 </td>
                 <td className="num-cell revenue-cell">
-                  {isSent && c.revenue > 0 ? `$${c.revenue.toLocaleString()}` : isSent ? "$0" : "—"}
+                  {isSent ? (
+                    <>
+                      <div>${c.revenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                      <div style={{ fontSize: "10px", color: "var(--text-muted)", fontWeight: 400 }}>
+                        ${(c.revenuePerRecipient ?? 0).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / recipient
+                      </div>
+                    </>
+                  ) : "—"}
                 </td>
                 <td>
                   <span className="badge" style={{ background: statusCfg.bg, color: statusCfg.color }}>

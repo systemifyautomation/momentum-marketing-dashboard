@@ -1244,6 +1244,81 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 
+/* ── Simple top-10 table ─────────────────────────────────────────── */
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.simple-table thead tr {
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.simple-table th {
+  padding: 8px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  background: var(--bg-surface);
+  white-space: nowrap;
+}
+
+.simple-table th.n { text-align: right; }
+
+.simple-table td {
+  padding: 9px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--bg-border);
+  vertical-align: middle;
+}
+
+.simple-table tbody tr:last-child td { border-bottom: none; }
+.simple-table tbody tr:hover td { background: var(--bg-card-hover); }
+
+.simple-table td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.simple-table td.n {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.simple-table td.rev {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.simple-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.simple-empty {
+  padding: 18px 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
 /* ════════════════════════════════════════════════════════
    MOBILE / RESPONSIVE
    ════════════════════════════════════════════════════════ */
