@@ -30,7 +30,7 @@ function BreakdownItem({ icon: Icon, label, amount, pct }) {
 }
 
 export default function RevenueOverview({ data }) {
-  if (!data || data.totalRevenue === 0) {
+  if (!data || (data.totalRevenue == null && data.attributedRevenue === 0)) {
     return (
       <div className="rov-wrap">
         <div className="rov-hero">
@@ -45,7 +45,7 @@ export default function RevenueOverview({ data }) {
       {/* Hero metrics */}
       <div className="rov-hero">
         <div className="rov-hero__col">
-          <div className="rov-hero__amount">{fmt$(data.totalRevenue)}</div>
+          <div className="rov-hero__amount">{data.totalRevenue != null ? fmt$(data.totalRevenue) : "—"}</div>
           <div className="rov-hero__label">Total revenue</div>
           <div className="rov-hero__trend">
             <TrendPill value={data.revenueTrend} />

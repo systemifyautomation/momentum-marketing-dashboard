@@ -1,50 +1,69 @@
 import { useState, useMemo, useEffect } from "react";
-import { BarChart2 } from "lucide-react";
+import { BarChart2, LogOut, ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import RevenueOverview from "./components/RevenueOverview";
-import { ClientRevenueChart } from "./components/Charts";
-import { getCampaigns, getFlows, getClients } from "./services/dataService";
+import NewClientModal from "./components/NewClientModal";
+import LoginScreen, { getSession, clearSession } from "./components/LoginScreen";
+import { getCampaigns, getFlows, getClients, getClientRevenue, clearCache, localDateStr } from "./services/dataService";
 import "./App.css";
 
-// Actual store total revenue per client (hardcoded until API provides it)
-const TOTAL_REVENUES = {
-  "2": 531_130.42,  // Live 2 Live
-  "3":  57_822.65,  // Steadfast
-  "4": 102_663.75,  // CanineDrops
-  "5":  99_428.86,  // Moments With Him
-  "6": 130_170.56,  // Nuvary
-  "7":  72_796.19,  // Oxyfuel
-  "8":  99_507.43,  // Sauna Protocol
-};
+// Default date range: month-to-date in UTC+9:30
+const now0 = new Date();
+const DEFAULT_END   = localDateStr(now0);
+const DEFAULT_START = `${DEFAULT_END.slice(0, 7)}-01`; // first of current month
 
 export default function App() {
-  const [activeClient, setActiveClient] = useState("all");
-  const [clients, setClients] = useState([{ id: "all", name: "All Clients", color: "#4F46E5" }]);
+  const [authed, setAuthed] = useState(() => Boolean(getSession()));
+  const [activeClient, setActiveClient] = useState(null);
+  const [clients, setClients] = useState([]);
   const [allCampaigns, setAllCampaigns] = useState([]);
   const [allFlowMessages, setAllFlowMessages] = useState([]);
+  const [clientTotalRevenue, setClientTotalRevenue] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [startDate, setStartDate] = useState(DEFAULT_START);
+  const [endDate, setEndDate]     = useState(DEFAULT_END);
+  const [showNewClientModal, setShowNewClientModal] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  // Load client list once on mount, then default to first client
   useEffect(() => {
-    Promise.all([getClients(), getCampaigns(), getFlows()])
-      .then(([clientList, campaigns, flowMessages]) => {
+    getClients()
+      .then((clientList) => {
         setClients(clientList);
+        if (clientList.length > 0) setActiveClient(clientList[0].id);
+      })
+      .catch((err) => console.error("Failed to load clients:", err));
+  }, []);
+
+  // Reload campaign + flow data when client or dates change
+  useEffect(() => {
+    if (!activeClient) return;
+    setLoading(true);
+    Promise.all([
+      getCampaigns(activeClient, startDate, endDate),
+      getFlows(activeClient, startDate, endDate),
+      getClientRevenue(activeClient, startDate, endDate),
+    ])
+      .then(([campaigns, flowMessages, totalRev]) => {
         setAllCampaigns(campaigns);
         setAllFlowMessages(flowMessages);
+        setClientTotalRevenue(totalRev);
       })
       .catch((err) => console.error("Failed to load data:", err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [activeClient, startDate, endDate]);
 
-  // Campaigns filtered by active client
+  // Campaigns for the active client
   const filteredCampaigns = useMemo(
-    () => activeClient === "all" ? allCampaigns : allCampaigns.filter((c) => c.clientId === activeClient),
+    () => activeClient ? allCampaigns.filter((c) => c.clientId === activeClient) : [],
     [allCampaigns, activeClient]
   );
 
   // Aggregate live flow messages by flow (group by flowId, sum metrics)
   const aggregatedFlows = useMemo(() => {
-    const source = (activeClient === "all"
-      ? allFlowMessages
-      : allFlowMessages.filter((m) => m.clientId === activeClient)
+    const source = (activeClient
+      ? allFlowMessages.filter((m) => m.clientId === activeClient)
+      : []
     ).filter((m) => m.status === "live");
     const flowMap = new Map();
     for (const msg of source) {
@@ -72,9 +91,9 @@ export default function App() {
     const delivered = filteredCampaigns.reduce((s, c) => s + c.delivered, 0);
 
     // Channel split: email vs SMS across campaigns + live flow messages
-    const liveMessages = (activeClient === "all"
-      ? allFlowMessages
-      : allFlowMessages.filter((m) => m.clientId === activeClient)
+    const liveMessages = (activeClient
+      ? allFlowMessages.filter((m) => m.clientId === activeClient)
+      : []
     ).filter((m) => m.status === "live");
     const emailRev =
       filteredCampaigns.filter((c) => c.channel?.toLowerCase() === "email").reduce((s, c) => s + c.revenue, 0) +
@@ -83,10 +102,8 @@ export default function App() {
       filteredCampaigns.filter((c) => c.channel?.toLowerCase() === "sms").reduce((s, c) => s + c.revenue, 0) +
       liveMessages.filter((m) => m.channel?.toLowerCase() === "sms").reduce((s, m) => s + m.revenue, 0);
 
-    // Total store revenue (hardcoded) — used for attributed %
-    const totalRevenue = activeClient === "all"
-      ? Object.values(TOTAL_REVENUES).reduce((s, v) => s + v, 0)
-      : (TOTAL_REVENUES[activeClient] ?? total);
+    // Total store revenue from webhook — used for attributed %
+    const totalRevenue = clientTotalRevenue;
     const attributedPct = totalRevenue > 0 ? +(total / totalRevenue * 100).toFixed(2) : null;
 
     return {
@@ -105,7 +122,7 @@ export default function App() {
       smsRevenue: smsRev,
       smsPct: total > 0 ? +(smsRev / total * 100).toFixed(2) : 0,
     };
-  }, [filteredCampaigns, aggregatedFlows, allFlowMessages, activeClient]);
+  }, [filteredCampaigns, aggregatedFlows, allFlowMessages, activeClient, clientTotalRevenue]);
 
   // Top 5 campaigns by revenue
   const topCampaigns = useMemo(
@@ -119,41 +136,34 @@ export default function App() {
     [aggregatedFlows]
   );
 
-  // Client comparison: total store revenue vs attributed (campaign + flow) revenue per client
-  const clientComparison = useMemo(() => {
-    return clients
-      .filter((c) => c.id !== "all")
-      .map((client) => {
-        const campaignRev = allCampaigns.filter((c) => c.clientId === client.id).reduce((s, c) => s + c.revenue, 0);
-        const flowRev = allFlowMessages.filter((m) => m.clientId === client.id && m.status === "live").reduce((s, m) => s + m.revenue, 0);
-        const totalRev = TOTAL_REVENUES[client.id] ?? 0;
-        const attrRev = campaignRev + flowRev;
-        return {
-          client: client.name,
-          revenue: totalRev,
-          attributedRevenue: attrRev,
-          attributedPct: totalRev > 0 ? +(attrRev / totalRev * 100).toFixed(1) : 0,
-        };
-      })
-      .filter((c) => c.revenue > 0 || c.attributedRevenue > 0);
-  }, [allCampaigns, allFlowMessages]);
-
   const activeClientData = clients.find((c) => c.id === activeClient);
+
+  if (!authed) return <LoginScreen onLogin={() => setAuthed(true)} />;
 
   return (
     <div className="app">
       {/* ── Sidebar ── */}
-      <aside className="sidebar">
+      {sidebarOpen && (
+        <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} />
+      )}
+      <aside className={`sidebar${sidebarCollapsed ? " sidebar--collapsed" : ""}${sidebarOpen ? " sidebar--open" : ""}`}>
         <div className="sidebar__brand">
           <div className="brand-logo">
             <svg viewBox="0 0 22 22" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
-              <text x="11" y="17" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">M</text>
+              <text x="11" y="17" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="16" fontWeight="800" fill="#ffffff">M</text>
             </svg>
           </div>
           <div className="brand-text">
             <span className="brand-name">Momentum</span>
             <span className="brand-sub">Marketing</span>
           </div>
+          <button
+            className="sidebar__toggle"
+            onClick={() => { setSidebarOpen(false); setSidebarCollapsed((c) => !c); }}
+            title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+          >
+            {sidebarCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+          </button>
         </div>
 
         <nav className="sidebar__nav">
@@ -162,14 +172,10 @@ export default function App() {
             <button
               key={client.id}
               className={`nav-item ${activeClient === client.id ? "nav-item--active" : ""}`}
-              onClick={() => setActiveClient(client.id)}
+              onClick={() => { setActiveClient(client.id); setSidebarOpen(false); }}
               style={activeClient === client.id ? { borderColor: client.color, color: client.color, background: client.color + "15" } : {}}
             >
-              {client.id === "all" ? (
-                <div className="nav-item__dot" style={{ background: "linear-gradient(135deg,#4F46E5,#0891B2)" }} />
-              ) : (
-                <div className="nav-item__dot" style={{ background: client.color }} />
-              )}
+              <div className="nav-item__dot" style={{ background: client.color }} />
               <div className="nav-item__info">
                 <span className="nav-item__name">{client.name}</span>
                 {client.industry && <span className="nav-item__industry">{client.industry}</span>}
@@ -184,6 +190,14 @@ export default function App() {
             <span>Klaviyo Connected</span>
           </div>
           <div className="sidebar-updated">Last synced: just now</div>
+          <button
+            className="btn-logout-sidebar"
+            onClick={() => { clearSession(); setAuthed(false); }}
+            title="Sign out"
+          >
+            <LogOut size={14} />
+            <span>Sign out</span>
+          </button>
         </div>
       </aside>
 
@@ -192,31 +206,42 @@ export default function App() {
         {/* Header */}
         <header className="topbar">
           <div className="topbar__left">
+            <button
+              className="btn-menu"
+              onClick={() => setSidebarOpen(true)}
+              title="Open menu"
+            >
+              <Menu size={18} />
+            </button>
             <div className="topbar__title">
-              {activeClient === "all" ? (
-                <>
-                  <span className="topbar__greeting">All Clients Overview</span>
-                  <span className="topbar__sub">{clients.length - 1} clients · {allCampaigns.length} campaigns total</span>
-                </>
-              ) : (
-                <>
-                  <span className="topbar__greeting">{activeClientData?.name}</span>
-                  <span className="topbar__sub">{filteredCampaigns.length} campaigns</span>
-                </>
-              )}
+              <span className="topbar__greeting">{activeClientData?.name}</span>
+              <span className="topbar__sub">{filteredCampaigns.length} campaigns</span>
             </div>
           </div>
           <div className="topbar__right">
-            <a
+            <button
               className="btn-new-client"
-              href="https://momentummarketing.app.n8n.cloud/form/d608769e-0296-49cd-bd11-76aae470501e"
-              target="_blank"
-              rel="noreferrer"
+              onClick={() => setShowNewClientModal(true)}
             >
               + New Client
-            </a>
+            </button>
             <div className="topbar__period">
-              <span>Last 30 days</span>
+              <input
+                type="date"
+                className="date-input"
+                value={startDate}
+                max={endDate}
+                onChange={(e) => { clearCache(); setStartDate(e.target.value); }}
+              />
+              <span className="date-sep">→</span>
+              <input
+                type="date"
+                className="date-input"
+                value={endDate}
+                min={startDate}
+                max={localDateStr(new Date())}
+                onChange={(e) => { clearCache(); setEndDate(e.target.value); }}
+              />
             </div>
             <div className="topbar__klaviyo">
               <div className="klaviyo-badge">
@@ -230,7 +255,61 @@ export default function App() {
         {/* Dashboard Grid */}
         <div className="dash-grid">
 
-          {/* Left 2/3: Revenue overview + ranked lists */}
+          {loading ? (
+            <div className="dash-col">
+              <div className="skeleton-loader">
+                <div className="skeleton-loader__label">
+                  <span className="skeleton-pulse skeleton-pulse--text" style={{ width: "160px" }} />
+                  <span className="skeleton-loader__dot" />
+                  <span className="skeleton-loader__dot" />
+                  <span className="skeleton-loader__dot" />
+                </div>
+                <div className="skeleton-hero">
+                  <div className="skeleton-hero__col">
+                    <span className="skeleton-pulse skeleton-pulse--amount" />
+                    <span className="skeleton-pulse skeleton-pulse--label" style={{ width: "90px" }} />
+                  </div>
+                  <div className="skeleton-divider" />
+                  <div className="skeleton-hero__col">
+                    <span className="skeleton-pulse skeleton-pulse--amount" />
+                    <span className="skeleton-pulse skeleton-pulse--label" style={{ width: "130px" }} />
+                  </div>
+                </div>
+                <div className="skeleton-breakdown">
+                  {[1,2,3,4].map((i) => (
+                    <div key={i} className="skeleton-breakdown__item">
+                      <span className="skeleton-pulse skeleton-pulse--label" style={{ width: "60px" }} />
+                      <span className="skeleton-pulse skeleton-pulse--amount" style={{ width: "80px" }} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="skeleton-lists">
+                {["Campaigns", "Flows"].map((label) => (
+                  <div key={label} className="rank-card">
+                    <div className="rank-card__header">
+                      <h3>Top {label}</h3>
+                      <p>By attributed revenue</p>
+                    </div>
+                    <ol className="rank-list">
+                      {[1,2,3].map((i) => (
+                        <li key={i} className="rank-item">
+                          <span className="rank-item__num">{i}</span>
+                          <div className="rank-item__info" style={{ flex: 1 }}>
+                            <span className="skeleton-pulse" style={{ width: `${140 - i * 20}px`, height: "12px", borderRadius: "4px", display: "block" }} />
+                            <span className="skeleton-pulse" style={{ width: "70px", height: "10px", borderRadius: "4px", display: "block", marginTop: "5px" }} />
+                          </div>
+                          <span className="skeleton-pulse" style={{ width: "60px", height: "14px", borderRadius: "4px" }} />
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+
           <div className="dash-col">
             <RevenueOverview data={revOverview} />
             <div className="top-lists">
@@ -242,7 +321,9 @@ export default function App() {
                   <p>By attributed revenue</p>
                 </div>
                 <ol className="rank-list">
-                  {topCampaigns.map((c, i) => {
+                  {topCampaigns.length === 0 ? (
+                    <li className="rank-item rank-item--empty">No campaigns in the last 30 days.</li>
+                  ) : topCampaigns.map((c, i) => {
                     const cl = clients.find((x) => x.id === c.clientId);
                     return (
                       <li key={c.id} className="rank-item">
@@ -271,7 +352,7 @@ export default function App() {
                 </div>
                 <ol className="rank-list">
                   {topFlows.length === 0 ? (
-                    <li className="rank-item rank-item--empty">No flows for this client.</li>
+                    <li className="rank-item rank-item--empty">No flows in the last 30 days.</li>
                   ) : topFlows.map((f, i) => {
                     const cl = clients.find((x) => x.id === f.clientId);
                     return (
@@ -296,23 +377,12 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right 1/3: Client revenue comparison */}
-          <div className="dash-col">
-            <div className="chart-card">
-              <div className="chart-card__header">
-                <div>
-                  <h3>Client Revenue</h3>
-                  <p>Campaign revenue vs flow revenue</p>
-                </div>
-              </div>
-              <div className="chart-body">
-                <ClientRevenueChart data={clientComparison} />
-              </div>
-            </div>
-          </div>
+          )} {/* end loading conditional */}
 
         </div>
       </main>
+
+      {showNewClientModal && <NewClientModal onClose={() => setShowNewClientModal(false)} />}
     </div>
   );
 }

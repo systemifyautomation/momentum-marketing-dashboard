@@ -125,6 +125,101 @@ async function flowsFromCsv() {
 
 // ── Webhook reader ───────────────────────────────────────────────────
 
+const CAMPAIGNS_WEBHOOK_URL = import.meta.env.VITE_CAMPAIGNS_WEBHOOK_URL ?? "";
+const FLOWS_WEBHOOK_URL     = import.meta.env.VITE_FLOWS_WEBHOOK_URL     ?? "";
+
+/** Format a YYYY-MM-DD string as ISO 8601 with UTC+9:30 offset. */
+function toIsoLocal(dateStr) {
+  return `${dateStr}T00:00:00+09:30`;
+}
+
+/** Fetch campaigns from n8n via POST with a client and date range. */
+async function campaignsFromWebhook(clientId, startDate, endDate) {
+  const res = await fetch(CAMPAIGNS_WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      client_id:  clientId,
+      start_date: toIsoLocal(startDate),
+      end_date:   toIsoLocal(endDate),
+    }),
+  });
+  if (!res.ok) throw new Error(`Campaigns webhook error: ${res.status}`);
+  const raw = await res.json();
+
+  return raw.map((row) => {
+    const recip = row.recipients ?? 0;
+    return {
+      id:             String(row.campaign_id ?? ""),
+      clientId:       clientId,
+      clientName:     "",
+      name:           row.campaign_message_name ?? row.campaign_name ?? row.campaign_id ?? "—",
+      channel:        row.send_channel  ?? "email",
+      sentDate:       row.date          ?? "",
+      status:         "Sent",
+      recipients:     recip,
+      delivered:      recip,
+      bounces:        0,
+      bounceRate:     0,
+      opens:          row.opens_unique  ?? 0,
+      openRate:       +(( row.open_rate   ?? 0) * 100).toFixed(2),
+      clicks:         row.clicks_unique ?? 0,
+      clickRate:      +((row.click_rate  ?? 0) * 100).toFixed(2),
+      placedOrders:   row.conversions   ?? 0,
+      conversionRate: recip > 0 ? +((row.conversions ?? 0) / recip * 100).toFixed(2) : 0,
+      revenue:        row.conversion_value      ?? 0,
+      revenuePerRecipient: row.revenue_per_recipient ?? 0,
+      unsubscribes:   0,
+      tags: "", type: "—", subject: "", list: "", sendWeekday: "",
+      totalOpens: 0, totalClicks: 0, spamComplaints: 0, spamComplaintsRate: 0,
+    };
+  });
+}
+
+/** Fetch flows from n8n via POST with a client and date range. */
+async function flowsFromWebhook(clientId, startDate, endDate) {
+  const res = await fetch(FLOWS_WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      client_id:  clientId,
+      start_date: toIsoLocal(startDate),
+      end_date:   toIsoLocal(endDate),
+    }),
+  });
+  if (!res.ok) throw new Error(`Flows webhook error: ${res.status}`);
+  const raw = await res.json();
+
+  return raw.map((row) => {
+    const recip = row.recipients ?? 0;
+    return {
+      id:                  String(row.flow_message_id ?? row.flow_id ?? ""),
+      flowId:              String(row.flow_id         ?? ""),
+      clientId:            clientId,
+      clientName:          "",
+      name:                row.flow_message_name ?? row.flow_name ?? row.flow_id ?? "—",
+      messageName:         row.flow_message_name ?? row.flow_name ?? row.flow_id ?? "—",
+      channel:             row.send_channel ?? "email",
+      status:              "live",
+      tags: "", type: "—",
+      recipients:          recip,
+      delivered:           recip,
+      bounces:             0,
+      bounceRate:          0,
+      opens:               row.opens_unique  ?? 0,
+      openRate:            +((row.open_rate  ?? 0) * 100).toFixed(2),
+      clicks:              row.clicks_unique ?? 0,
+      clickRate:           +((row.click_rate ?? 0) * 100).toFixed(2),
+      placedOrders:        row.conversions   ?? 0,
+      conversionRate:      recip > 0 ? +((row.conversions ?? 0) / recip * 100).toFixed(2) : 0,
+      revenue:             row.conversion_value      ?? 0,
+      revenuePerRecipient: row.revenue_per_recipient ?? 0,
+      unsubscribes:        0,
+      unsubRate: 0, complaintRate: 0,
+    };
+  });
+}
+
 async function fetchFromWebhook(entity, clientId) {
   const url = `${WEBHOOK_URL}?entity=${entity}&clientId=${clientId}`;
   const response = await fetch(url);
@@ -134,42 +229,94 @@ async function fetchFromWebhook(entity, clientId) {
 
 // ── Public API ───────────────────────────────────────────────────────
 
-// Cache so the CSV is only fetched once per session
-let _campaignsCache = null;
-let _flowsCache     = null;
+// Cache keyed by "startDate|endDate" so different ranges are stored separately
+const _campaignsCache = new Map();
+const _flowsCache     = new Map();
 
-/**
- * Load campaigns, optionally filtered by clientId.
- * @param {string} [clientId]  Pass a client ID to filter, omit (or "all") for all clients.
- */
-export async function getCampaigns(clientId) {
-  if (DATA_SOURCE === "webhook") return fetchFromWebhook("campaigns", clientId);
-
-  if (!_campaignsCache) _campaignsCache = await campaignsFromCsv();
-
-  return clientId && clientId !== "all"
-    ? _campaignsCache.filter((c) => c.clientId === clientId)
-    : _campaignsCache;
+/** Format a Date as YYYY-MM-DD in UTC+9:30 (Adelaide / Darwin time). */
+export function localDateStr(date) {
+  const OFFSET_MS = (9 * 60 + 30) * 60 * 1000;
+  const shifted = new Date(date.getTime() + OFFSET_MS);
+  const y = shifted.getUTCFullYear();
+  const m = String(shifted.getUTCMonth() + 1).padStart(2, "0");
+  const d = String(shifted.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
 }
 
 /**
- * Load flows, optionally filtered by clientId.
- * @param {string} [clientId]  Pass a client ID to filter, omit (or "all") for all clients.
+ * Add one day to a YYYY-MM-DD string.
+ * n8n uses "less-than" for end_date, so we add 1 day to make the
+ * user-selected end date inclusive.
  */
-export async function getFlows(clientId) {
-  if (DATA_SOURCE === "webhook") return fetchFromWebhook("flows", clientId);
-
-  if (!_flowsCache) _flowsCache = await flowsFromCsv();
-
-  return clientId && clientId !== "all"
-    ? _flowsCache.filter((f) => f.clientId === clientId)
-    : _flowsCache;
+function nextDayStr(dateStr) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const next = new Date(y, m - 1, d + 1);
+  return `${next.getFullYear()}-${String(next.getMonth() + 1).padStart(2, "0")}-${String(next.getDate()).padStart(2, "0")}`;
 }
 
-/** Clear the in-memory cache (useful if files are reloaded). */
+/**
+ * Load campaigns for the given client and date range from the n8n webhook.
+ * Dates are YYYY-MM-DD strings in UTC+9:30. End date is made exclusive (+1 day)
+ * to satisfy n8n's "less-than" operator while keeping the selected day inclusive.
+ */
+export async function getCampaigns(clientId, startDate, endDate) {
+  const key = `${clientId}|${startDate}|${endDate}`;
+  if (!_campaignsCache.has(key)) {
+    _campaignsCache.set(key, await campaignsFromWebhook(clientId, startDate, nextDayStr(endDate)));
+  }
+  return _campaignsCache.get(key);
+}
+
+/**
+ * Load flows for the given client and date range from the n8n webhook.
+ */
+export async function getFlows(clientId, startDate, endDate) {
+  const key = `${clientId}|${startDate}|${endDate}`;
+  if (!_flowsCache.has(key)) {
+    _flowsCache.set(key, await flowsFromWebhook(clientId, startDate, nextDayStr(endDate)));
+  }
+  return _flowsCache.get(key);
+}
+
+/** Clear the in-memory cache (call when date range changes). */
 export function clearCache() {
-  _campaignsCache = null;
-  _flowsCache     = null;
+  _campaignsCache.clear();
+  _flowsCache.clear();
+  _revenueCache.clear();
+}
+
+// ── Client Revenue ───────────────────────────────────────────────────
+
+const REVENUE_WEBHOOK_URL = import.meta.env.VITE_REVENUE_WEBHOOK_URL ?? "";
+const _revenueCache = new Map();
+
+/**
+ * Fetch the total store revenue for a client from the n8n webhook.
+ * Returns the numeric total_revenue value, or null if unavailable.
+ */
+export async function getClientRevenue(clientId, startDate, endDate) {
+  const key = `${clientId}|${startDate}|${endDate}`;
+  if (!_revenueCache.has(key)) {
+    try {
+      const res = await fetch(REVENUE_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client_id:  clientId,
+          start_date: toIsoLocal(startDate),
+          end_date:   toIsoLocal(nextDayStr(endDate)),
+        }),
+      });
+      if (!res.ok) throw new Error(`Revenue webhook error: ${res.status}`);
+      const data = await res.json();
+      const row = Array.isArray(data) ? data[0] : data;
+      _revenueCache.set(key, row?.total_revenue ?? null);
+    } catch (err) {
+      console.warn("getClientRevenue failed:", err.message);
+      _revenueCache.set(key, null);
+    }
+  }
+  return _revenueCache.get(key);
 }
 
 // ── Clients ──────────────────────────────────────────────────────────
@@ -211,10 +358,7 @@ export async function getClients() {
       color: CLIENT_COLORS[i % CLIENT_COLORS.length],
     }));
 
-    _clientsCache = [
-      { id: "all", name: "All Clients", color: "#4F46E5" },
-      ...clientList,
-    ];
+    _clientsCache = clientList;
   } catch (err) {
     console.error("Failed to load clients from webhook:", err);
     _clientsCache = [{ id: "all", name: "All Clients", color: "#4F46E5" }];
