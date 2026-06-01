@@ -4,11 +4,12 @@ import { X } from "lucide-react";
 const WEBHOOK_URL = import.meta.env.VITE_NEW_CLIENT_WEBHOOK_URL ?? "";
 
 export default function NewClientModal({ onClose }) {
-  const [clientName, setClientName] = useState("");
-  const [apiKey, setApiKey]         = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess]       = useState(false);
-  const [error, setError]           = useState(null);
+  const [clientName, setClientName]           = useState("");
+  const [apiKey, setApiKey]                   = useState("");
+  const [attributionGoal, setAttributionGoal] = useState(40);
+  const [submitting, setSubmitting]           = useState(false);
+  const [success, setSuccess]                 = useState(false);
+  const [error, setError]                     = useState(null);
   const nameRef = useRef(null);
 
   // Focus first field and trap Escape key
@@ -27,7 +28,11 @@ export default function NewClientModal({ onClose }) {
       const res = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ client_name: clientName, api_key: apiKey }),
+        body: JSON.stringify({
+          client_name:      clientName,
+          api_key:          apiKey,
+          attribution_goal: Number(attributionGoal),
+        }),
       });
       if (!res.ok) throw new Error(`Server responded with ${res.status}`);
       setSuccess(true);
@@ -79,6 +84,21 @@ export default function NewClientModal({ onClose }) {
                 required
                 disabled={submitting}
                 autoComplete="off"
+              />
+            </div>
+
+            <div className="modal__field">
+              <label htmlFor="nc-goal">Attribution Goal (%)</label>
+              <input
+                id="nc-goal"
+                type="number"
+                min="1"
+                max="100"
+                step="1"
+                placeholder="40"
+                value={attributionGoal}
+                onChange={(e) => setAttributionGoal(e.target.value)}
+                disabled={submitting}
               />
             </div>
 

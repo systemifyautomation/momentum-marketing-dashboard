@@ -1,9 +1,10 @@
 import { useState, useMemo, useEffect } from "react";
-import { BarChart2, LogOut, ChevronLeft, ChevronRight, Menu } from "lucide-react";
-import RevenueOverview from "./components/RevenueOverview";
+import { BarChart2, LogOut, ChevronLeft, ChevronRight, Menu, LayoutGrid } from "lucide-react";
+import DateRangePicker from "./components/DateRangePicker";
 import NewClientModal from "./components/NewClientModal";
 import LoginScreen, { getSession, clearSession } from "./components/LoginScreen";
-import { getCampaigns, getFlows, getClients, getClientRevenue, clearCache, localDateStr } from "./services/dataService";
+import ClientOverviewTable from "./components/ClientOverviewTable";
+import { getCampaigns, getFlows, getClients, clearCache, localDateStr, getAllRevenues, getScheduledCampaigns } from "./services/dataService";
 import "./App.css";
 
 // Default date range: month-to-date in UTC+9:30
@@ -13,132 +14,46 @@ const DEFAULT_START = `${DEFAULT_END.slice(0, 7)}-01`; // first of current month
 
 export default function App() {
   const [authed, setAuthed] = useState(() => Boolean(getSession()));
-  const [activeClient, setActiveClient] = useState(null);
   const [clients, setClients] = useState([]);
+  // All components for all clients — loaded once per date range
   const [allCampaigns, setAllCampaigns] = useState([]);
   const [allFlowMessages, setAllFlowMessages] = useState([]);
-  const [clientTotalRevenue, setClientTotalRevenue] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // Map<clientId, totalRevenue> — loaded once per date range
+  const [allRevenues, setAllRevenues] = useState(new Map());
+  const [scheduledCampaigns, setScheduledCampaigns] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [startDate, setStartDate] = useState(DEFAULT_START);
   const [endDate, setEndDate]     = useState(DEFAULT_END);
   const [showNewClientModal, setShowNewClientModal] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Load client list once on mount, then default to first client
+  // Load client list once on mount — default view is overview (activeClient stays null)
   useEffect(() => {
     getClients()
-      .then((clientList) => {
-        setClients(clientList);
-        if (clientList.length > 0) setActiveClient(clientList[0].id);
-      })
+      .then(setClients)
       .catch((err) => console.error("Failed to load clients:", err));
+    getScheduledCampaigns()
+      .then(setScheduledCampaigns)
+      .catch((err) => console.error("Failed to load scheduled campaigns:", err));
   }, []);
 
-  // Reload campaign + flow data when client or dates change
+  // Load ALL components + ALL revenues in one pass whenever dates change
   useEffect(() => {
-    if (!activeClient) return;
     setLoading(true);
     Promise.all([
-      getCampaigns(activeClient, startDate, endDate),
-      getFlows(activeClient, startDate, endDate),
-      getClientRevenue(activeClient, startDate, endDate),
+      getCampaigns(startDate, endDate),
+      getFlows(startDate, endDate),
+      getAllRevenues(startDate, endDate),
     ])
-      .then(([campaigns, flowMessages, totalRev]) => {
+      .then(([campaigns, flowMessages, revenues]) => {
         setAllCampaigns(campaigns);
         setAllFlowMessages(flowMessages);
-        setClientTotalRevenue(totalRev);
+        setAllRevenues(revenues);
       })
       .catch((err) => console.error("Failed to load data:", err))
       .finally(() => setLoading(false));
-  }, [activeClient, startDate, endDate]);
-
-  // Campaigns for the active client
-  const filteredCampaigns = useMemo(
-    () => activeClient ? allCampaigns.filter((c) => c.clientId === activeClient) : [],
-    [allCampaigns, activeClient]
-  );
-
-  // Aggregate live flow messages by flow (group by flowId, sum metrics)
-  const aggregatedFlows = useMemo(() => {
-    const source = (activeClient
-      ? allFlowMessages.filter((m) => m.clientId === activeClient)
-      : []
-    ).filter((m) => m.status === "live");
-    const flowMap = new Map();
-    for (const msg of source) {
-      if (!flowMap.has(msg.flowId)) {
-        flowMap.set(msg.flowId, {
-          id: msg.flowId, clientId: msg.clientId, clientName: msg.clientName,
-          name: msg.name, type: msg.type,
-          revenue: 0, delivered: 0, opens: 0, clicks: 0,
-        });
-      }
-      const f = flowMap.get(msg.flowId);
-      f.revenue += msg.revenue;
-      f.delivered += msg.delivered;
-      f.opens += msg.opens;
-      f.clicks += msg.clicks;
-    }
-    return Array.from(flowMap.values());
-  }, [allFlowMessages, activeClient]);
-
-  // Revenue overview computed from real CSV data
-  const revOverview = useMemo(() => {
-    const campaignRev = filteredCampaigns.reduce((s, c) => s + c.revenue, 0);
-    const flowRev = aggregatedFlows.reduce((s, f) => s + f.revenue, 0);
-    const total = campaignRev + flowRev;
-    const delivered = filteredCampaigns.reduce((s, c) => s + c.delivered, 0);
-
-    // Channel split: email vs SMS across campaigns + live flow messages
-    const liveMessages = (activeClient
-      ? allFlowMessages.filter((m) => m.clientId === activeClient)
-      : []
-    ).filter((m) => m.status === "live");
-    const emailRev =
-      filteredCampaigns.filter((c) => c.channel?.toLowerCase() === "email").reduce((s, c) => s + c.revenue, 0) +
-      liveMessages.filter((m) => m.channel?.toLowerCase() === "email").reduce((s, m) => s + m.revenue, 0);
-    const smsRev =
-      filteredCampaigns.filter((c) => c.channel?.toLowerCase() === "sms").reduce((s, c) => s + c.revenue, 0) +
-      liveMessages.filter((m) => m.channel?.toLowerCase() === "sms").reduce((s, m) => s + m.revenue, 0);
-
-    // Total store revenue from webhook — used for attributed %
-    const totalRevenue = clientTotalRevenue;
-    const attributedPct = totalRevenue > 0 ? +(total / totalRevenue * 100).toFixed(2) : null;
-
-    return {
-      totalRevenue,
-      revenueTrend: null,
-      attributedRevenue: total,
-      attributedTrend: null,
-      attributedPct,
-      perRecipient: delivered > 0 ? total / delivered : 0,
-      campaignRevenue: campaignRev,
-      campaignPct: total > 0 ? +(campaignRev / total * 100).toFixed(2) : 0,
-      flowRevenue: flowRev,
-      flowPct: total > 0 ? +(flowRev / total * 100).toFixed(2) : 0,
-      emailRevenue: emailRev,
-      emailPct: total > 0 ? +(emailRev / total * 100).toFixed(2) : 0,
-      smsRevenue: smsRev,
-      smsPct: total > 0 ? +(smsRev / total * 100).toFixed(2) : 0,
-    };
-  }, [filteredCampaigns, aggregatedFlows, allFlowMessages, activeClient, clientTotalRevenue]);
-
-  // Top 10 campaigns by revenue
-  const topCampaigns = useMemo(
-    () => [...filteredCampaigns].sort((a, b) => b.revenue - a.revenue).slice(0, 10),
-    [filteredCampaigns]
-  );
-
-  // Top 10 flow messages by revenue
-  const topFlows = useMemo(
-    () => [...(activeClient ? allFlowMessages.filter((m) => m.clientId === activeClient) : [])]
-      .sort((a, b) => b.revenue - a.revenue)
-      .slice(0, 10),
-    [allFlowMessages, activeClient]
-  );
-
-  const activeClientData = clients.find((c) => c.id === activeClient);
+  }, [startDate, endDate]);
 
   if (!authed) return <LoginScreen onLogin={() => setAuthed(true)} />;
 
@@ -169,21 +84,16 @@ export default function App() {
         </div>
 
         <nav className="sidebar__nav">
-          <div className="nav-section-label">Clients</div>
-          {clients.map((client) => (
-            <button
-              key={client.id}
-              className={`nav-item ${activeClient === client.id ? "nav-item--active" : ""}`}
-              onClick={() => { setActiveClient(client.id); setSidebarOpen(false); }}
-              style={activeClient === client.id ? { borderColor: client.color, color: client.color, background: client.color + "15" } : {}}
-            >
-              <div className="nav-item__dot" style={{ background: client.color }} />
-              <div className="nav-item__info">
-                <span className="nav-item__name">{client.name}</span>
-                {client.industry && <span className="nav-item__industry">{client.industry}</span>}
-              </div>
-            </button>
-          ))}
+          <div className="nav-section-label">Overview</div>
+          <button
+            className="nav-item nav-item--active nav-item--overview"
+            onClick={() => setSidebarOpen(false)}
+          >
+            <LayoutGrid size={14} style={{ flexShrink: 0, opacity: 0.7 }} />
+            <div className="nav-item__info">
+              <span className="nav-item__name">All Clients</span>
+            </div>
+          </button>
         </nav>
 
         <div className="sidebar__footer">
@@ -216,8 +126,8 @@ export default function App() {
               <Menu size={18} />
             </button>
             <div className="topbar__title">
-              <span className="topbar__greeting">{activeClientData?.name}</span>
-              <span className="topbar__sub">{filteredCampaigns.length} campaigns</span>
+              <span className="topbar__greeting">All Clients</span>
+              <span className="topbar__sub">{clients.length} active accounts</span>
             </div>
           </div>
           <div className="topbar__right">
@@ -227,24 +137,11 @@ export default function App() {
             >
               + New Client
             </button>
-            <div className="topbar__period">
-              <input
-                type="date"
-                className="date-input"
-                value={startDate}
-                max={endDate}
-                onChange={(e) => { clearCache(); setStartDate(e.target.value); }}
-              />
-              <span className="date-sep">→</span>
-              <input
-                type="date"
-                className="date-input"
-                value={endDate}
-                min={startDate}
-                max={localDateStr(new Date())}
-                onChange={(e) => { clearCache(); setEndDate(e.target.value); }}
-              />
-            </div>
+            <DateRangePicker
+              start={startDate}
+              end={endDate}
+              onApply={(s, e) => { clearCache(); setStartDate(s); setEndDate(e); }}
+            />
             <div className="topbar__klaviyo">
               <div className="klaviyo-badge">
                 <BarChart2 size={12} />
@@ -257,134 +154,17 @@ export default function App() {
         {/* Dashboard Grid */}
         <div className="dash-grid">
 
-          {loading ? (
-            <div className="dash-col">
-              <div className="skeleton-loader">
-                <div className="skeleton-loader__label">
-                  <span className="skeleton-pulse skeleton-pulse--text" style={{ width: "160px" }} />
-                  <span className="skeleton-loader__dot" />
-                  <span className="skeleton-loader__dot" />
-                  <span className="skeleton-loader__dot" />
-                </div>
-                <div className="skeleton-hero">
-                  <div className="skeleton-hero__col">
-                    <span className="skeleton-pulse skeleton-pulse--amount" />
-                    <span className="skeleton-pulse skeleton-pulse--label" style={{ width: "90px" }} />
-                  </div>
-                  <div className="skeleton-divider" />
-                  <div className="skeleton-hero__col">
-                    <span className="skeleton-pulse skeleton-pulse--amount" />
-                    <span className="skeleton-pulse skeleton-pulse--label" style={{ width: "130px" }} />
-                  </div>
-                </div>
-                <div className="skeleton-breakdown">
-                  {[1,2,3,4].map((i) => (
-                    <div key={i} className="skeleton-breakdown__item">
-                      <span className="skeleton-pulse skeleton-pulse--label" style={{ width: "60px" }} />
-                      <span className="skeleton-pulse skeleton-pulse--amount" style={{ width: "80px" }} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="skeleton-lists">
-                {["Campaigns", "Flows"].map((label) => (
-                  <div key={label} className="rank-card">
-                    <div className="rank-card__header">
-                      <h3>Top {label}</h3>
-                      <p>By attributed revenue</p>
-                    </div>
-                    <ol className="rank-list">
-                      {[1,2,3].map((i) => (
-                        <li key={i} className="rank-item">
-                          <span className="rank-item__num">{i}</span>
-                          <div className="rank-item__info" style={{ flex: 1 }}>
-                            <span className="skeleton-pulse" style={{ width: `${140 - i * 20}px`, height: "12px", borderRadius: "4px", display: "block" }} />
-                            <span className="skeleton-pulse" style={{ width: "70px", height: "10px", borderRadius: "4px", display: "block", marginTop: "5px" }} />
-                          </div>
-                          <span className="skeleton-pulse" style={{ width: "60px", height: "14px", borderRadius: "4px" }} />
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : (
-
-          <div className="dash-col">
-            <RevenueOverview data={revOverview} />
-
-              <div className="top-lists">
-
-                {/* Top 10 Campaigns */}
-                <div className="rank-card">
-                  <div className="rank-card__header">
-                    <h3>Top Campaigns</h3>
-                    <p>By revenue · top 10</p>
-                  </div>
-                  {topCampaigns.length === 0 ? (
-                    <p className="simple-empty">No campaigns for this period.</p>
-                  ) : (
-                    <table className="simple-table">
-                      <thead><tr>
-                        <th>Campaign</th>
-                        <th className="n">Sent</th>
-                        <th className="n">Open</th>
-                        <th className="n">Click</th>
-                        <th className="n">Revenue</th>
-                      </tr></thead>
-                      <tbody>
-                        {topCampaigns.map((c, i) => (
-                          <tr key={c.id}>
-                            <td><span className="simple-rank">{i + 1}</span>{c.name}</td>
-                            <td className="n">{c.recipients.toLocaleString()}</td>
-                            <td className="n">{c.openRate}%</td>
-                            <td className="n">{c.clickRate}%</td>
-                            <td className="n rev">${c.revenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  )}
-                </div>
-
-                {/* Top 10 Flows */}
-                <div className="rank-card">
-                  <div className="rank-card__header">
-                    <h3>Top Flows</h3>
-                    <p>By revenue · top 10</p>
-                  </div>
-                  {topFlows.length === 0 ? (
-                    <p className="simple-empty">No flows for this period.</p>
-                  ) : (
-                    <table className="simple-table">
-                      <thead><tr>
-                        <th>Flow</th>
-                        <th className="n">Sent</th>
-                        <th className="n">Open</th>
-                        <th className="n">Click</th>
-                        <th className="n">Revenue</th>
-                      </tr></thead>
-                      <tbody>
-                        {topFlows.map((f, i) => (
-                          <tr key={f.id}>
-                            <td><span className="simple-rank">{i + 1}</span>{f.name}</td>
-                            <td className="n">{(f.delivered ?? f.recipients ?? 0).toLocaleString()}</td>
-                            <td className="n">{f.openRate}%</td>
-                            <td className="n">{f.clickRate}%</td>
-                            <td className="n rev">${f.revenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  )}
-                </div>
-
-              </div>
-
-            </div>
-          )} {/* end loading conditional */}
+          {/* ── All-Client Overview ── */}
+          <ClientOverviewTable
+            clients={clients}
+            allCampaigns={allCampaigns}
+            allFlowMessages={allFlowMessages}
+            allRevenues={allRevenues}
+            scheduledCampaigns={scheduledCampaigns}
+            loading={loading}
+            startDate={startDate}
+            endDate={endDate}
+          />
 
         </div>
       </main>
