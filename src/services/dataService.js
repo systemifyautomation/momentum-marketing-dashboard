@@ -42,6 +42,20 @@ function toIsoLocal(dateStr) {
   return `${dateStr}T00:00:00+09:30`;
 }
 
+/** Fetch with one automatic retry after 10 s on any network error or non-ok status. */
+async function fetchWithRetry(url, options) {
+  const attempt = () => fetch(url, options).then((res) => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res;
+  });
+  try {
+    return await attempt();
+  } catch (err) {
+    await new Promise((resolve) => setTimeout(resolve, 10_000));
+    return attempt(); // let the error propagate if it fails again
+  }
+}
+
 /** Normalise a rate value: "39.5%" or "39.5" → 39.5 · "0.395" → 39.5 */
 function normaliseRate(value) {
   if (typeof value === "string" && value.includes("%")) {
@@ -123,7 +137,7 @@ const _campaignsCache = new Map();
 
 /** Fetch ALL campaigns for ALL clients for the given date range. */
 async function campaignsFromWebhook(startDate, endDate) {
-  const res = await fetch(CAMPAIGNS_WEBHOOK_URL, {
+  const res = await fetchWithRetry(CAMPAIGNS_WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -131,7 +145,6 @@ async function campaignsFromWebhook(startDate, endDate) {
       end_date:   toIsoLocal(endDate),
     }),
   });
-  if (!res.ok) throw new Error(`Campaigns webhook error: ${res.status}`);
   const raw = await res.json();
   return (Array.isArray(raw) ? raw : []).map(mapCampaignRow);
 }
@@ -151,7 +164,7 @@ const _flowsCache = new Map();
 
 /** Fetch ALL flow messages for ALL clients for the given date range. */
 async function flowsFromWebhook(startDate, endDate) {
-  const res = await fetch(FLOWS_WEBHOOK_URL, {
+  const res = await fetchWithRetry(FLOWS_WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -159,7 +172,6 @@ async function flowsFromWebhook(startDate, endDate) {
       end_date:   toIsoLocal(endDate),
     }),
   });
-  if (!res.ok) throw new Error(`Flows webhook error: ${res.status}`);
   const raw = await res.json();
   return (Array.isArray(raw) ? raw : []).map(mapFlowRow);
 }
@@ -184,7 +196,7 @@ const _revenueCache = new Map();
  * Returns Map<clientId (string), totalRevenue (number | null)>
  */
 async function allRevenuesFromWebhook(startDate, endDate) {
-  const res = await fetch(REVENUE_WEBHOOK_URL, {
+  const res = await fetchWithRetry(REVENUE_WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -192,7 +204,6 @@ async function allRevenuesFromWebhook(startDate, endDate) {
       end_date:   toIsoLocal(nextDayStr(endDate)),
     }),
   });
-  if (!res.ok) throw new Error(`Revenue webhook error: ${res.status}`);
   const data = await res.json();
   const rows = Array.isArray(data) ? data : [data];
 
@@ -263,12 +274,11 @@ let _scheduledCampaignsCache = null;
 export async function getScheduledCampaigns() {
   if (_scheduledCampaignsCache) return _scheduledCampaignsCache;
   try {
-    const res = await fetch(SCHEDULED_CAMPAIGNS_WEBHOOK_URL, {
+    const res = await fetchWithRetry(SCHEDULED_CAMPAIGNS_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({}),
     });
-    if (!res.ok) throw new Error(`Scheduled campaigns webhook error: ${res.status}`);
     const raw = await res.json();
     _scheduledCampaignsCache = (Array.isArray(raw) ? raw : []).map(mapScheduledCampaignRow);
   } catch (err) {
@@ -305,8 +315,7 @@ export async function getClients() {
   if (_clientsCache) return _clientsCache;
 
   try {
-    const res = await fetch(CLIENTS_WEBHOOK_URL);
-    if (!res.ok) throw new Error(`Clients webhook error: ${res.status}`);
+    const res = await fetchWithRetry(CLIENTS_WEBHOOK_URL);
     const raw = await res.json();
 
     _clientsCache = raw.map((c, i) => {

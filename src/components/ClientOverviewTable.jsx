@@ -173,36 +173,26 @@ function ExpandedDetail({ client, scheduledCampaigns, allFlowMessages }) {
       .filter((c) => c.clientId === client.id);
   }, [scheduledCampaigns, client.id]);
 
-  // Aggregate live flow messages by flowId, then flag underperformers
+  // Show each live flow message as its own row, flag underperformers
   const underperformingFlows = useMemo(() => {
     const liveMessages = allFlowMessages.filter(
       (m) => m.clientId === client.id && m.status === "live"
     );
-    const flowMap = new Map();
-    for (const msg of liveMessages) {
-      if (!flowMap.has(msg.flowId)) {
-        const flowName    = (msg.name        && msg.name        !== "—") ? msg.name        : msg.flowId;
-        const messageName = (msg.messageName && msg.messageName !== "—") ? msg.messageName : flowName;
-        flowMap.set(msg.flowId, { flowId: msg.flowId, flowName, messageName, delivered: 0, opens: 0, clicks: 0 });
-      }
-      const f = flowMap.get(msg.flowId);
-      f.delivered += msg.delivered ?? 0;
-      f.opens     += msg.opens     ?? 0;
-      f.clicks    += msg.clicks    ?? 0;
-    }
     const result = [];
-    for (const f of flowMap.values()) {
-      if (f.delivered === 0) continue;
-      const openRate  = +(f.opens  / f.delivered * 100).toFixed(1);
-      const clickRate = +(f.clicks / f.delivered * 100).toFixed(1);
+    for (const msg of liveMessages) {
+      if ((msg.delivered ?? 0) === 0) continue;
+      const openRate  = +((msg.openRate  ?? 0).toFixed(1));
+      const clickRate = +((msg.clickRate ?? 0).toFixed(1));
       const openUrgency  = getMetricUrgency(openRate,  OPEN_BENCHMARK);
       const clickUrgency = getMetricUrgency(clickRate, CLICK_BENCHMARK);
-      if (openUrgency === "good" && clickUrgency === "good") continue; // don't show passing flows
+      if (openUrgency === "good" && clickUrgency === "good") continue; // don't show passing messages
       const overallUrgency = (openUrgency === "urgent" || clickUrgency === "urgent") ? "urgent" : "moderate";
+      const flowName    = (msg.name        && msg.name        !== "—") ? msg.name        : msg.flowId;
+      const messageName = (msg.messageName && msg.messageName !== "—") ? msg.messageName : flowName;
       result.push({
-        flowId: f.flowId, flowName: f.flowName, messageName: f.messageName,
+        id: msg.id, flowId: msg.flowId, flowName, messageName,
         openRate, clickRate, openUrgency, clickUrgency, overallUrgency,
-        klaviyoUrl: `https://www.klaviyo.com/flow/${f.flowId}/edit`,
+        klaviyoUrl: `https://www.klaviyo.com/flow/${msg.flowId}/edit`,
       });
     }
     return result.sort((a, b) => a.overallUrgency === b.overallUrgency ? 0 : a.overallUrgency === "urgent" ? -1 : 1);
@@ -249,7 +239,7 @@ function ExpandedDetail({ client, scheduledCampaigns, allFlowMessages }) {
                 </thead>
                 <tbody>
                   {underperformingFlows.map((f) => (
-                    <tr key={f.flowId} className={`flow-row--${f.overallUrgency}`}>
+                    <tr key={f.id ?? f.flowId + f.messageName} className={`flow-row--${f.overallUrgency}`}>
                       <FlowMessageCell name={f.messageName} />
                       <td className="flow-name-cell">
                         <span title={f.flowName}>{f.flowName}</span>
