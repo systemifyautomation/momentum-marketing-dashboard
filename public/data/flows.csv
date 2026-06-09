@@ -1,0 +1,457 @@
+Flow ID,Flow Name,Flow Message ID,Flow Message Name,Flow Message Channel,Status,Delivered,Unique Opens,Open Rate,Unique Clicks,Click Rate,Placed Order,Placed Order Rate,Revenue,Revenue per Recipient,Unsub Rate,Complaint Rate,Bounce Rate,Tags,Client ID,Client Name
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),Tv4HwE,Abandoned Cart 1 (New Customers),Email,live,4936,2477,0.50182,373,0.07557,58,0.01175,3148.44002,0.63785,0.02391,0.00061,0.11684,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),UEpZbr,"Abandoned Cart 1 (New Customers) Test #4 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),SMkRjy,"Abandoned Cart 1 (New Customers) Test #4 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),UzQi58,Abandoned Cart 2 (New Customers),Email,live,4420,1982,0.44842,231,0.05226,42,0.0095,1720.07999,0.38916,0.01561,0.00045,0.11741,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),YrJkKh,Abandoned Cart 2 (Repeat Purchaser),Email,live,683,393,0.5754,38,0.05564,10,0.01464,374.4,0.54817,0.00586,0,0.05793,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),QPJ2mn,Abandoned Cart 3 (New Customers),Email,live,4156,1451,0.34913,79,0.01901,16,0.00385,752.91001,0.18116,0.00987,0.00048,0.12707,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),SSe7yQ,"Abandoned Cart 3 (New Customers) Test #5 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),SMARds,"Abandoned Cart 3 (New Customers) Test #5 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),X2MfXF,Abandoned Cart 4 (New Customers),Email,live,3939,1136,0.2884,80,0.02031,17,0.00432,695.86001,0.17666,0.00482,0.00051,0.12564,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),U7jGBg,"Abandoned Cart 4 (New Customers) Test #1 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),YezfTt,"Abandoned Cart 4 (New Customers) Test #1 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),XeL7WT,Abandoned Cart 5 (New Customers),Email,live,3737,1717,0.45946,133,0.03559,21,0.00562,866.78,0.23195,0.00776,0,0.1238,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),Rtx5F9,Email 1: Abandoned Cart (Repeat Purchaser),Email,live,779,430,0.55199,104,0.1335,18,0.02311,1105.40001,1.419,0.00513,0,0.06258,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),RVvxNw,"Email 1: Abandoned Cart (Repeat Purchaser) Test #2 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SWEVfr,ABANDONED CART - (FINISHED A/B TESTING),RQSht8,"Email 1: Abandoned Cart (Repeat Purchaser) Test #2 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),XSsLgH,Abandoned Cart 3: Scarcity,Email,live,4712,1750,0.37139,133,0.02823,28,0.00594,1315.48,0.27918,0.01528,0,0.13763,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),YuYWsL,"Abandoned Cart 3: Scarcity Test #4 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),XRXTQ9,"Abandoned Cart 3: Scarcity Test #4 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),Ue7bg7,Abandoned Checkout 4: Social Proof/ Testimonial,Email,live,4250,1613,0.37953,75,0.01765,13,0.00306,558.03,0.1313,0.01294,0.00047,0.13688,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),Ukqrz3,Abandoned Checkout 5: Objection Crusher/ FAQ,Email,live,3771,1045,0.27711,72,0.01909,19,0.00504,1006.56999,0.26692,0.0053,0.00027,0.12323,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),Yg4rtR,"Abandoned Checkout 5: Objection Crusher/ FAQ Test #2 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),U4bBQg,"Abandoned Checkout 5: Objection Crusher/ FAQ Test #2 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),SzLy97,Abandoned Checkout 6: Discount Offer,Email,live,3435,884,0.25735,32,0.00932,4,0.00116,221.61,0.06452,0.00524,0.00058,0.0818,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),RsqqV8,"Abandoned Checkout 6: Discount Offer Test #3 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),UjBSY5,"Abandoned Checkout 6: Discount Offer Test #3 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),VEhkYU,Abandoned Checkout: Email 2,Email,live,5121,2011,0.3927,277,0.05409,48,0.00937,1987.63001,0.38813,0.01757,0.00137,0.13174,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),XuQCfG,"Abandoned Checkout: Email 2 Test #9 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),TgXNC7,"Abandoned Checkout: Email 2 Test #9 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),Y5935E,Abandoned Email #1,Email,live,5682,3074,0.54101,491,0.08641,117,0.02059,5477.63002,0.96403,0.03977,0.00088,0.12558,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),TCLQis,"Abandoned Email #1 Test #7 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),XdCBjq,"Abandoned Email #1 Test #7 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),StkqHH,Copy of Abandoned Email #1,Email,live,816,586,0.71814,140,0.17157,56,0.06863,2863.89999,3.50968,0.00613,0,0.04784,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),XR8pWq,"Copy of Abandoned Email #1 Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XFZKvd,ABANDONED CHECKOUT (FINISHED A/B TESTING),T2exGc,"Copy of Abandoned Email #1 Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),RnXPr4,Abandoned Browse Series 1,Email,live,3850,1684,0.4374,99,0.02571,13,0.00338,573.4,0.14894,0.00494,0.00026,0.20438,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),TUwQEn,"Abandoned Browse Series 1 Test #5 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),V5VFye,"Abandoned Browse Series 1 Test #5 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),WjUNnW,Email #1 Repeat Customer: Keen on snatching this?,Email,live,3208,1580,0.49252,169,0.05268,20,0.00623,964.97001,0.3008,0.00312,0,0.03461,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),UT8EKP,"Email #1 Repeat Customer: Keen on snatching this? Test #2 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),RdDDpt,"Email #1 Repeat Customer: Keen on snatching this? Test #2 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),UJxbGj,Email #2 Repeat Customer: Text based Reminder. Anything we can help with?,Email,live,2907,1625,0.559,116,0.0399,24,0.00826,927.08,0.31891,0.00241,0,0.03805,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),VJduy2,Email #3 Social Proof + Incentive/discount intro,Email,live,3164,1151,0.36378,44,0.01391,4,0.00126,163.04,0.05153,0.00411,0,0.17259,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),TbsMAc,"Email #3 Social Proof + Incentive/discount intro Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),SyrJXz,"Email #3 Social Proof + Incentive/discount intro Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),XdiQKD,Email #4 - Text base from founder - Last chance on offer,Email,live,3334,1553,0.46581,70,0.021,6,0.0018,287.82,0.08633,0.0057,0,0.19293,,2,Live 2 Live
+XstYtW,Browse Abandon Flow  (FINISHED A/B TESTING),Wpfxja,Email #4 Text-base from founder/last chance,Email,live,2997,1599,0.53353,150,0.05005,16,0.00534,642.33,0.21432,0.00901,0,0.15075,,2,Live 2 Live
+VDRyyh,Full Shipping Confirmation - Standard,RrYJUG,Your order has been shipped!,Email,live,10433,6177,0.59206,1733,0.16611,39,0.00374,1454.62,0.13942,0.00134,0.00019,0.10646,,2,Live 2 Live
+SChSYS,MM | Abandoned Cart,QSHKEc,SMS #1,SMS,live,3997,0,0,290,0.07255,66,0.01651,3796.92999,0.94994,0.02927,0,0,,2,Live 2 Live
+WgUtQw,MM | Abandoned Checkout,Y5kmkZ,SMS #1,SMS,live,3831,0,0,263,0.06865,93,0.02428,3943.31003,1.02932,0.03419,0,0,,2,Live 2 Live
+VUBsnp,MM | Browse Abandonment,RGJCJN,Browse Abandonment,SMS,live,2395,0,0,102,0.04259,23,0.0096,978.33,0.40849,0.00668,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,RiNtAY,Copy of Copy of Copy of SMS #2,SMS,live,204,0,0,4,0.01961,0,0,0,0,0.02941,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,WELn9h,Copy of Copy of SMS #2,SMS,live,2529,0,0,117,0.04626,7,0.00277,194.99,0.0771,0.02926,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,Ut4WZq,Copy of SMS #2,SMS,live,38,0,0,3,0.07895,0,0,0,0,0.07895,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,UttNmU,SMS #1,SMS,live,16994,0,0,3486,0.20513,2452,0.14429,113079.9504,6.65411,0.03148,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,TXVGE9,SMS #2,SMS,live,15881,0,0,756,0.0476,82,0.00516,3657.56001,0.23031,0.03728,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,S42SeN,SMS #3,SMS,live,11932,0,0,352,0.0295,40,0.00335,1932.45001,0.16196,0.02405,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,TQsKKh,SMS #4,SMS,live,10238,0,0,232,0.02266,24,0.00234,1199.27,0.11714,0.01905,0,0,,2,Live 2 Live
+SF3URr,MM | Welcome Series SMS,UQsJnH,SMS #7,SMS,live,8493,0,0,447,0.05263,27,0.00318,1122.44001,0.13216,0.0146,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,VY2ktk,Copy of Copy of Email #1,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,XnnNEA,"Copy of Copy of Email #1 Test #1 May 17, 2026 Variation A",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,XULAVP,"Copy of Copy of Email #1 Test #1 May 17, 2026 Variation B",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,QQyThq,Copy of Email #1,Email,draft,11699,3119,0.2666,83,0.00709,4,0.00034,232.8,0.0199,0.00718,0.00034,0.21488,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,RraRLh,"Copy of Email #1 Test #2 May 17, 2026 Variation A",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,TKYxxZ,"Copy of Email #1 Test #2 May 17, 2026 Variation B",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,WjzyAV,Copy of Email #3,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,SQRxFy,Email #3,Email,draft,11958,3786,0.31661,42,0.00351,3,0.00025,125.28,0.01048,0.00452,8.00E-05,0.21324,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,UnNq7v,Non-Buyer,Email,draft,11209,3496,0.31189,80,0.00714,13,0.00116,598.87999,0.05343,0.00455,0.00027,0.20857,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,VN4W5d,"Non-Buyer Test #2 May 17, 2026 Variation A",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XRQqGm,Non-Buyer Flow,SKAXju,"Non-Buyer Test #2 May 17, 2026 Variation B",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,SvNARk,Copy of Copy of Post purchase series (2 or more): VIP discount,Email,live,438,182,0.41553,21,0.04795,1,0.00228,120.46,0.27502,0.00457,0,0.03097,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,SHVZAL,"Copy of Copy of Post purchase series (2 or more): VIP discount Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,TTkQuC,"Copy of Copy of Post purchase series (2 or more): VIP discount Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,UCaM7C,Copy of Post purchase series (2 or more): VIP discount,Email,live,366,160,0.43716,16,0.04372,3,0.0082,100.08,0.27344,0.00273,0,0.07342,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,W9LvWp,"Copy of Post purchase series (2 or more): VIP discount Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,XjbkQf,"Copy of Post purchase series (2 or more): VIP discount Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,W58pbg,Email #3,Email,live,4632,1865,0.40263,150,0.03238,8,0.00173,350.48,0.07566,0.00756,0.00022,0.02852,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,WnPwXh,"Email #3 Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,TXnAQb,"Email #3 Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,X7bduS,Email #7,Email,live,1310,511,0.39008,23,0.01756,4,0.00305,106.48,0.08128,0.00687,0,0.08392,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,VSP5m8,Email #9,Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,SDhSPD,Post purchase series (2 or more): Thank you Again,Email,live,1307,649,0.49656,32,0.02448,0,0,0,0,0.00383,0,0.06776,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,T8fxis,"Post purchase series (2 or more): Thank you Again Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,Vt5d6a,"Post purchase series (2 or more): Thank you Again Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,Y5xMyS,Post purchase series (2 or more): Your opinion matters,Email,live,1145,497,0.43406,30,0.0262,7,0.00611,229.84,0.20073,0.00786,0,0.0247,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,TH2jK7,"Post purchase series (2 or more): Your opinion matters Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,T5Zh8u,"Post purchase series (2 or more): Your opinion matters Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,SNrDwX,Post-purchase series 1: thank you from the founder,Email,live,7761,3918,0.50483,316,0.04072,42,0.00541,1433.01001,0.18464,0.00618,0,0.11917,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,YnKySg,Post-purchase series 2: Send us your best moments,Email,live,6493,2445,0.37656,47,0.00724,11,0.00169,475.4,0.07322,0.00601,0,0.08614,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,RNxbPA,"Post-purchase series 2: Send us your best moments Test #1 May 16, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SfsBdn,Post-Purchase Nurture Series,XJcCCg,"Post-purchase series 2: Send us your best moments Test #1 May 16, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,TPxEQe,Copy of Email #1,Email,live,2099,826,0.39352,33,0.01572,0,0,0,0,0.00238,0,0.06378,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,TnQw77,"Copy of Email #1 Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,UyfkYX,"Copy of Email #1 Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,UzrJ5f,Email #1,Email,live,7735,3967,0.51286,176,0.02275,7,0.0009,252.13,0.0326,0.00349,0,0.12182,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,Xt3AL8,"Email #1 Test #1 March 24, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,V3AED2,"Email #1 Test #1 March 24, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,YzaNwv,Email #3,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+U9GchV,Post-Purchase Thank You,TJgWgh,Email #4,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),TmMCWM,Email #1 (Repeat),Email,live,2381,1213,0.50945,81,0.03402,7,0.00294,308.46,0.12955,0.00672,0,0.03564,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),VrhEvF,"Email #1 (Repeat) Test #2 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),Ubfzgr,"Email #1 (Repeat) Test #2 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),TiN3dk,Email #1 First-time visitor,Email,live,12428,5173,0.41624,378,0.03042,37,0.00298,1545.8,0.12438,0.01585,0.0004,0.13,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),SgLFip,"Email #1 First-time visitor Test #3 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),RDKCFL,"Email #1 First-time visitor Test #3 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),YAXJJn,Email #2 (Repeat),Email,live,1924,1045,0.54314,31,0.01611,4,0.00208,224.39,0.11663,0.00416,0,0.03752,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),XaUTLi,Email #2 First-time visitor (US vs. THEM),Email,live,10702,4240,0.39619,185,0.01729,23,0.00215,925.88,0.08651,0.01476,0.00028,0.13714,,2,Live 2 Live
+YzEFgj,Site Abandon Flow (FINISHED A/B TESTING),Rzedbv,Email #3 First-time visitor,Email,live,9953,3665,0.36823,168,0.01688,23,0.00231,852.68,0.08567,0.01145,0.0009,0.14169,,2,Live 2 Live
+RKLUhi,Sunset flow,QY6B2f,Sunset Flow,Email,live,12013,1293,0.10763,113,0.00941,15,0.00125,556.28,0.04631,0.0045,0.00017,0.09513,,2,Live 2 Live
+RKLUhi,Sunset flow,TwVgzC,"Sunset Flow Test #2 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+RKLUhi,Sunset flow,R7uksw,"Sunset Flow Test #2 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,XhwwQD,Copy of Post purchase (UPSELL) - Hoodie 2,Email,live,2614,1406,0.53787,61,0.02334,3,0.00115,156.39,0.05983,0.00995,0,0.08409,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,XAePFN,"Copy of Post purchase (UPSELL) - Hoodie 2 Test #2 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,SKkXrA,"Copy of Post purchase (UPSELL) - Hoodie 2 Test #2 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,SAzbkA,My Gift for You..I appreciate you so much,Email,live,2512,1131,0.45024,80,0.03185,2,0.0008,82.58,0.03287,0.00318,0,0.08588,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,WhHef9,"My Gift for You..I appreciate you so much Test #2 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,VEGbCw,"My Gift for You..I appreciate you so much Test #2 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,VfniFh,Post purchase (UPSELL) - Hoodie,Email,live,2939,1740,0.59204,156,0.05308,23,0.00783,600.91,0.20446,0.00442,0.00034,0.08242,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,SpDrXi,"Post purchase (UPSELL) - Hoodie Test #2 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+TsWraN,Upsell - Hoodie,Sj2bBU,"Post purchase (UPSELL) - Hoodie Test #2 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,RkrVtA,Copy of Copy of Email #3,Email,live,6827,3585,0.52512,148,0.02168,8,0.00117,312.34,0.04575,0.01069,0.00015,0.12463,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,XqYpdf,Email #1,Email,live,7975,4377,0.54884,233,0.02922,20,0.00251,946.32,0.11866,0.01317,0.00025,0.11634,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,SN6twT,"Email #1 Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,SHtdbv,"Email #1 Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,YApe77,T-shirt last sale,Email,live,7551,3678,0.48709,142,0.01881,5,0.00066,184.64,0.02445,0.00702,0.00026,0.11756,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,WMp29X,"T-shirt last sale Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SEHMir,Upsell - Mental Health Matters,WamXxk,"T-shirt last sale Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,SfRdyD,Copy of Copy of Email #3,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,XjznqA,Copy of Email #1,Email,live,67,34,0.50746,1,0.01493,0,0,0,0,0,0,0.10667,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,VvAH9F,Copy of Email #3,Email,live,212,122,0.57547,6,0.0283,0,0,0,0,0,0,0.04933,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,Uyk27W,Email #1,Email,live,6256,3002,0.47986,446,0.07129,76,0.01215,1667.45,0.26654,0.00799,0.00016,0.13268,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,SGNmjL,"Email #1 Test #4 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,UqAYuR,"Email #1 Test #4 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,TjeEx8,Email 3 Upsell T-shirt,Email,live,5612,2504,0.44619,84,0.01497,12,0.00214,542.53001,0.09667,0.00499,0.00018,0.13462,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,UaU7MC,Email 4 Upsell T-shirt,Email,live,5603,2443,0.43602,91,0.01624,9,0.00161,283.33,0.05057,0.00464,0,0.13547,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,RR8ywv,T-shirt last sale,Email,live,5993,2925,0.48807,262,0.04372,36,0.00601,1039.71,0.17349,0.00467,0.00017,0.13346,,2,Live 2 Live
+YeL3A6,Upsell - T-shirt,R2uH8i,Upsell,Email,live,5595,2368,0.42324,121,0.02163,6,0.00107,136.69,0.02443,0.00965,0.00018,0.13657,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,VDKNnK,Copy of Email #1,Email,live,115,60,0.52174,5,0.04348,1,0.0087,17.69,0.15383,0,0,0.03361,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,Xv2Pd2,"Copy of Email #1 Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,Th9Zzr,"Copy of Email #1 Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,XwNWeC,Copy of Email #3,Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,TRji2f,"Copy of Email #3 Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,V2J8U7,"Copy of Email #3 Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,V7n27w,Upsell,Email,live,2320,1006,0.43362,35,0.01509,3,0.00129,204.93,0.08833,0.00991,0,0.06602,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,RnMBDn,"Upsell Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,UXDnEk,"Upsell Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,Y9PYRf,Zip Hoodie Email #2,Email,live,2573,1297,0.50408,65,0.02526,11,0.00428,596.94999,0.23201,0.007,0,0.08564,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,XhYirF,"Zip Hoodie Email #2 Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,St6sbt,"Zip Hoodie Email #2 Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,TVXbdE,Zip Hoodie Email #3,Email,live,2316,1126,0.48618,26,0.01123,4,0.00173,161.46,0.06972,0.00561,0,0.06763,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,UyYdQh,Zip upsell 1,Email,live,2901,1513,0.52154,125,0.04309,24,0.00827,731.42,0.25213,0.00345,0.00034,0.08051,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,SsJsay,"Zip upsell 1 Test #1 May 17, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+SLykjN,Upsell - Zip Hoodie,W3Adbw,"Zip upsell 1 Test #1 May 17, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),W6s8QG,Copy of Email #1,Email,live,22722,9027,0.39728,1537,0.06764,363,0.01598,16716.89005,0.73571,0.01457,0.00075,0.13818,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),Sjp7F2,Email #1 - Text based Founder intro (Best Performing),Email,live,23840,10165,0.42638,1668,0.06997,381,0.01598,18844.28009,0.79045,0.0143,0.00088,0.13801,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),RGn54p,"Email #3 - Brand story, USP, Bestsellers highlight...Reiterate offer",Email,live,19708,5549,0.28156,296,0.01502,27,0.00137,1349.2,0.06846,0.00995,0.00051,0.13588,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),UycJZw,"Email #3 - Brand story, USP, Bestsellers highlight...Reiterate offer Test #6 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),S48yx2,"Email #3 - Brand story, USP, Bestsellers highlight...Reiterate offer Test #6 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),RBJNGZ,"Email #4 Social Proof & Testimonials Emails, reiterate offer",Email,live,18912,5675,0.30007,252,0.01332,21,0.00111,1101.63001,0.05825,0.0129,0.00058,0.1375,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),Yk9zWY,"Email #4 Social Proof & Testimonials Emails, reiterate offer Test #6 May 07, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),TvfHGL,"Email #4 Social Proof & Testimonials Emails, reiterate offer Test #6 May 07, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),SeKRjC,"Email #5 Offer reminder, talk through mission & bestsellers. Us vs Them",Email,live,18091,5980,0.33055,411,0.02272,56,0.0031,2594.05001,0.14339,0.01393,0.00066,0.1368,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),YzhhH9,"Email #5 Offer reminder, talk through mission & bestsellers. Us vs Them Test #6 May 08, 2026 Variation A",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),W5d7eD,"Email #5 Offer reminder, talk through mission & bestsellers. Us vs Them Test #6 May 08, 2026 Variation B",Email,manual,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),RLJNUy,"Hail Mary ""You have store credit waiting, expires today""",Email,live,11273,4742,0.42065,168,0.0149,12,0.00106,619.41,0.05495,0.00807,0.00018,0.00879,,2,Live 2 Live
+WxfViB,WELCOME FLOW (FINISHED A/B TESTING),Uzzx7k,Welcome Email #5,Email,live,15961,5368,0.33632,273,0.0171,25,0.00157,952.02001,0.05965,0.0099,0.00031,0.02319,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,VDLVZa,Welcome Email #1: Existing Customer,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,RcZm53,"Welcome Email #1: Existing Customer Test #1 May 07, 2026 Variation A",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,U6cP7Y,"Welcome Email #1: Existing Customer Test #1 May 07, 2026 Variation B",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,RmgS2b,Welcome Email #1: Never Purchased,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,Sfdnw3,"Welcome Email #1: Never Purchased Test #1 May 07, 2026 Variation A",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,XCv33u,"Welcome Email #1: Never Purchased Test #1 May 07, 2026 Variation B",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+Y5dS8g,Welcome Series - Customer v. Non-Customer,Ueuk58,Welcome Email #2: Social Media,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,2,Live 2 Live
+XVC2df,WinBack Flow,XcTX9Y,Winback - Email 1,Email,draft,2223,749,0.33693,55,0.02474,12,0.0054,523.86,0.23565,0.01574,0.00225,0.25302,,2,Live 2 Live
+XVC2df,WinBack Flow,Wuya57,Winback - Email 2,Email,draft,1272,61,0.04796,3,0.00236,0,0,0,0,0.00236,0.00079,0.33991,,2,Live 2 Live
+UTCCzR,MM | Abandoned Cart,TpALbq,Email 1A Nudge + Familiar greeting,Email,live,30,23,0.76667,3,0.1,1,0.03333,116.12,3.87067,0.03333,0,0,,8,Sauna Protocol
+UTCCzR,MM | Abandoned Cart,Tsd2nh,Email 1B Nudge + Support + Welcome Offer,Email,live,276,137,0.49638,9,0.03261,1,0.00362,107.45,0.38931,0.02174,0,0,,8,Sauna Protocol
+UTCCzR,MM | Abandoned Cart,XEF64e,Email 2A TB Reminder,Email,live,27,13,0.48148,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+UTCCzR,MM | Abandoned Cart,WJ6g7i,Email 2B Text Based Reminder+ Welcome Offer,Email,live,246,119,0.48374,2,0.00813,1,0.00407,99.93,0.40622,0.00813,0,0,,8,Sauna Protocol
+UTCCzR,MM | Abandoned Cart,Yuv9tg,Email 3B What others are saying + Welcome Discount,Email,live,230,98,0.42609,4,0.01739,0,0,0,0,0.0087,0,0,,8,Sauna Protocol
+UTCCzR,MM | Abandoned Cart,X6W4Ye,"Email 3B What others are saying + Welcome Discount Test #1 April 21, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+UTCCzR,MM | Abandoned Cart,VQTXJY,"Email 3B What others are saying + Welcome Discount Test #1 April 21, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+XgDqRj,MM | Abandoned Cart (SMS),RgkHHf,SMS #1,SMS,live,40,0,0,3,0.075,0,0,0,0,0,0,0,,8,Sauna Protocol
+QVZPWQ,MM | Abandoned Checkout,VNcWhe,Email #1A Nudge + Familiar Greeting,Email,live,992,608,0.6129,56,0.05645,0,0,0,0,0.00907,0,0,,8,Sauna Protocol
+QVZPWQ,MM | Abandoned Checkout,QXj632,Email #1B Nudge + Support + Welcome Discount,Email,live,243,106,0.43621,14,0.05761,9,0.03704,840.46,3.45868,0.02058,0,0.00816,,8,Sauna Protocol
+QVZPWQ,MM | Abandoned Checkout,Sz4GJy,Email #2A (Item) is ready to Ship,Email,live,211,83,0.39336,9,0.04265,3,0.01422,312.2,1.47962,0.00948,0,0,,8,Sauna Protocol
+QVZPWQ,MM | Abandoned Checkout,SexFkY,Email #2B,Email,live,233,108,0.46352,8,0.03433,3,0.01288,290.2,1.24549,0.01717,0,0,,8,Sauna Protocol
+QVZPWQ,MM | Abandoned Checkout,TWVyyr,Email #3A LAST CHANCE,Email,live,964,517,0.53631,31,0.03216,2,0.00207,425.91,0.44182,0.00622,0.00104,0.00104,,8,Sauna Protocol
+QVZPWQ,MM | Abandoned Checkout,WHBw6V,Email #3B,Email,live,220,80,0.36364,2,0.00909,1,0.00455,60.32,0.27418,0.02273,0,0,,8,Sauna Protocol
+Xu3FG6,MM | Abandoned Checkout SMS,RtJYy2,SMS #1,SMS,live,20,0,0,0,0,1,0.05,89.47,4.4735,0.05,0,0,,8,Sauna Protocol
+WLLLJP,MM | Browse Abandonment,QQhjMi,Email #1A Keen on snatching this?,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+WLLLJP,MM | Browse Abandonment,YzcEfi,Email #1B Reminder of the product they have,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+WLLLJP,MM | Browse Abandonment,Y7dncY,Email #2 Text based reminder. Anything we can help with? See what's New >,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+WLLLJP,MM | Browse Abandonment,VSzsSh,Email #2B Plain text email asking if they need any help/ Cross sells,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+WLLLJP,MM | Browse Abandonment,WkVeQu,Email #3B Social Proof + Incentive/discount intro,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+WLLLJP,MM | Browse Abandonment,SVVeyE,Email #4 Text based from founder...Last chance on offer,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+Tma8qN,MM | Browse Abandonment - Standard,WVZTrL,Browse Abandonment,SMS,draft,1,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+RNSTVg,MM | Site Abandon Flow,VywFA8,Email #1 - Welcome back! Did you find what you were looking for?,Email,live,107,81,0.75701,4,0.03738,0,0,0,0,0.05607,0,0,,8,Sauna Protocol
+RNSTVg,MM | Site Abandon Flow,YwmpYt,Email #2 - Category & Best sellers showcase + Welcome Discount,Email,live,258,71,0.27519,8,0.03101,0,0,0,0,0.01163,0,0.00386,,8,Sauna Protocol
+RNSTVg,MM | Site Abandon Flow,XbdykV,Email #3 - Need any help?,Email,live,219,50,0.22831,4,0.01826,1,0.00457,87.5,0.39954,0.00913,0,0.00455,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,Yz4FpG,Copy of Email #4,Email,live,1241,556,0.44803,127,0.10234,40,0.03223,3420.75999,2.75645,0.00886,0.00161,0.00799,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,RQfVsp,Email #1A - Welcome Mystery Offer,Email,live,1497,714,0.47695,163,0.10888,47,0.0314,4167.8,2.7841,0.0147,0.00134,0.01253,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,YfYENX,"Email #1A - Welcome Mystery Offer Test #1 May 01, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,Tr6NyK,"Email #1A - Welcome Mystery Offer Test #1 May 01, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,SrEcBu,"Email #2 - Brand Story, USP, Bestsellers highlights..Reiterate offer",Email,live,740,242,0.32703,11,0.01486,5,0.00676,389.21001,0.52596,0.01351,0,0,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,R4XQSj,"Email #3 - Social Proof & Testimonials Emails, reiterate offer",Email,live,1103,355,0.32185,12,0.01088,6,0.00544,414.89,0.37615,0.00544,0.00091,0,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,SJKtST,"Email #4 - Offer reminders, talk thorugh mission & bestsellers Us vs. Them",Email,live,1056,350,0.33144,33,0.03125,9,0.00852,982.10999,0.93003,0.01042,0,0,,8,Sauna Protocol
+Usc735,MM | Welcome Flow,Rn39r9,Hail Merry - Best Email Template,Email,live,828,283,0.34179,16,0.01932,5,0.00604,382.85,0.46238,0.00725,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,Yjqqks,Copy of Copy of Copy of SMS #2,SMS,live,5,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,RLHUV9,Copy of Copy of SMS #2,SMS,live,46,0,0,0,0,0,0,0,0,0.02174,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,X5nj7c,Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,W5dYU8,SMS #1,SMS,live,222,0,0,63,0.28378,66,0.2973,5886.53002,26.5159,0.0991,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,Rek8DU,SMS #2,SMS,live,174,0,0,10,0.05747,1,0.00575,85.29,0.49017,0.06897,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,WBBMbm,SMS #3,SMS,live,96,0,0,4,0.04167,1,0.01042,104.4,1.0875,0.01042,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,R9GSiw,SMS #4,SMS,live,87,0,0,6,0.06897,0,0,0,0,0.05747,0,0,,8,Sauna Protocol
+UgN7pD,MM | Welcome Series SMS,XGpmHP,SMS #7,SMS,live,70,0,0,17,0.24286,2,0.02857,222.59,3.17986,0.01429,0,0,,8,Sauna Protocol
+WmE6Fv,Welcome Flow (Already Subscribed),VJD44S,Welcome Flow - Already Subscribed #1,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,8,Sauna Protocol
+URcuJd,MM | Abandoned Cart (SMS),Ys4fKb,SMS #1,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+URcuJd,MM | Abandoned Cart (SMS),VeLGeg,SMS #1 (FIRST TIME),SMS,live,1,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+TTbUF8,MM | Abandoned Checkout (SMS),VFBNbB,SMS #1,SMS,live,1,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+Tjzj23,MM | Added to Cart DONE,WUr62Z,Email #1 (REPEAT) Nudge + Familiar Greeting,Email,live,6,3,0.5,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+Tjzj23,MM | Added to Cart DONE,UqkTyv,Email #1B Nudget + Support + Welcome Discount,Email,live,142,33,0.23239,7,0.0493,0,0,0,0,0.00704,0,0.01389,,7,Oxyfuel
+Tjzj23,MM | Added to Cart DONE,QPv8xx,Email #2 (REPEAT) (Item) is ready to ship,Email,live,6,1,0.16667,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+Tjzj23,MM | Added to Cart DONE,UsMTHd,Email #2B P.A.S + Welcome Discount,Email,live,143,46,0.32168,5,0.03497,1,0.00699,38.98,0.27259,0.00699,0,0.02721,,7,Oxyfuel
+Tjzj23,MM | Added to Cart DONE,TGGAAu,Email #3 Urgency + Testimonials,Email,live,130,24,0.18462,0,0,0,0,0,0,0,0,0.01515,,7,Oxyfuel
+RyJeUj,MM | Browse Abandonment (SMS),V9zZVh,SMS #1 Browse Abandonment (FIRST-TIME),SMS,live,8,0,0,0,0,0,0,0,0,0.25,0,0,,7,Oxyfuel
+RyJeUj,MM | Browse Abandonment (SMS),RkWpVm,SMS #1 Browse Abandonment (REPEAT),SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+TCKP8S,MM | WELCOME FLOW DONE,WDyMJZ,"Email #1A Welcome Email, Community Welcome, Reiterate OFFER",Email,live,617,217,0.3517,37,0.05997,12,0.01945,711.23001,1.15272,0.00324,0,0.01908,,7,Oxyfuel
+TCKP8S,MM | WELCOME FLOW DONE,VrbGDm,"Email #2 Brand Story, USP, Bestsellers highlights...Reiterate offer",Email,live,536,89,0.16604,2,0.00373,2,0.00373,76.73,0.14315,0.0056,0,0.00924,,7,Oxyfuel
+TCKP8S,MM | WELCOME FLOW DONE,SV7waR,"Email #3 Social Proof & Testimonials Email, Reiterate offer",Email,live,543,88,0.16206,1,0.00184,0,0,0,0,0.00552,0.00184,0,,7,Oxyfuel
+TCKP8S,MM | WELCOME FLOW DONE,WSC4Hn,"Email #4 Offer reminder, talk through mission & bestsellers. Us. Vs. Them",Email,live,547,84,0.15356,5,0.00914,1,0.00183,43.98,0.0804,0.00548,0.00183,0,,7,Oxyfuel
+TCKP8S,MM | WELCOME FLOW DONE,VNx4hS,Email #5 - Last offer/hail Merry,Email,live,582,140,0.24055,3,0.00515,0,0,0,0,0,0,0.00342,,7,Oxyfuel
+TCKP8S,MM | WELCOME FLOW DONE,RdiSZL,Welcome Email #1B: Resend Email 1 but with different SL/PT,Email,live,544,169,0.31066,21,0.0386,4,0.00735,259.42001,0.47688,0.00368,0,0.01805,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,VTXudk,Copy of Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,SW8KNZ,Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,R55BX8,Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,TDM4M2,SMS #1,SMS,live,28,0,0,9,0.32143,5,0.17857,394.07001,14.07393,0.10714,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,UPbTES,SMS #2,SMS,live,19,0,0,1,0.05263,0,0,0,0,0,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,XM2C5d,SMS #3,SMS,live,12,0,0,0,0,0,0,0,0,0.16667,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,WwYwPX,SMS #4,SMS,live,9,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+XRDSqB,MM | Welcome Series SMS,Tuwy6e,SMS #7,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+Y5dDDr,NEW ABANDONED CHECKOUT DONE,WD6xDA,Email #1 (REPEAT) Nudge + Familiar Greeting,Email,live,400,79,0.1975,12,0.03,0,0,0,0,0.0025,0.0025,0.32546,,7,Oxyfuel
+Y5dDDr,NEW ABANDONED CHECKOUT DONE,UZgwfy,Email #1B Nudget + Support + Welcome Discount,Email,live,83,23,0.27711,6,0.07229,2,0.0241,79.47,0.95747,0.0241,0,0.23148,,7,Oxyfuel
+Y5dDDr,NEW ABANDONED CHECKOUT DONE,TT8A8U,Email #2 (REPEAT) (Item) is ready to ship,Email,live,402,116,0.28856,20,0.04975,2,0.00498,152.94,0.38045,0.00995,0,0.32323,,7,Oxyfuel
+Y5dDDr,NEW ABANDONED CHECKOUT DONE,T9th2n,Email #2B P.A.S + Welcome Discount,Email,live,101,40,0.39604,7,0.06931,2,0.0198,178.94,1.77168,0.0099,0,0.17886,,7,Oxyfuel
+Y5dDDr,NEW ABANDONED CHECKOUT DONE,WhK2cd,Email #3 Urgency + Testimonials,Email,live,100,23,0.23,1,0.01,0,0,0,0,0,0,0.19355,,7,Oxyfuel
+Tc5hfL,NEW ACTIVE ON SITE DONE,RSmbJp,Email #1 Category + Best sellers showcase + Welcome discount,Email,live,544,187,0.34375,9,0.01654,2,0.00368,103.96,0.1911,0.01103,0.00184,0.02509,,7,Oxyfuel
+Tc5hfL,NEW ACTIVE ON SITE DONE,YvEVv6,Email #1A Welcome back! Did you find what you were looking for,Email,live,203,103,0.50739,7,0.03448,3,0.01478,217.92,1.0735,0.04433,0.00493,0,,7,Oxyfuel
+Tc5hfL,NEW ACTIVE ON SITE DONE,WXJ559,Email #2 Last chance for a discount/ Us vs. them,Email,live,480,157,0.32708,3,0.00625,1,0.00208,87.08,0.18142,0.01042,0.00208,0.02041,,7,Oxyfuel
+YhyUzY,NEW BROWSE ABANDONED DONE,V8sFkk,Email #1A - Reminder of the product they have,Email,live,560,162,0.28929,4,0.00714,2,0.00357,109.97001,0.19638,0.00357,0.00179,0.04762,,7,Oxyfuel
+YhyUzY,NEW BROWSE ABANDONED DONE,U5G6Wp,Email #1B Reminder of the product they have,Email,live,228,86,0.37719,2,0.00877,0,0,0,0,0.00439,0,0,,7,Oxyfuel
+YhyUzY,NEW BROWSE ABANDONED DONE,RSHbKi,Email #2 (REPEAT) Text Based Reminder. Anything we can help with? See what's new>,Email,live,128,94,0.73438,2,0.01562,2,0.01562,108.96,0.85125,0.00781,0,0,,7,Oxyfuel
+YhyUzY,NEW BROWSE ABANDONED DONE,RANqyB,Email #2B We're here to help..Any questions? Offer Reminder,Email,live,644,261,0.40528,7,0.01087,1,0.00155,69.98,0.10866,0.00776,0.00311,0.03593,,7,Oxyfuel
+YhyUzY,NEW BROWSE ABANDONED DONE,R72Suf,Email #3B Social Proof + Welcome Offer,Email,live,628,151,0.24045,8,0.01274,0,0,0,0,0.00318,0,0.03236,,7,Oxyfuel
+YhyUzY,NEW BROWSE ABANDONED DONE,XyscQg,Email #4B LAST OFFER,Email,live,328,86,0.2622,4,0.0122,0,0,0,0,0.0061,0,0.05747,,7,Oxyfuel
+SqYtYy,NEW POST-PURCHASE FOLLOW UP,RsBTUy,Copy of Email #1 Reiterate community/Mission,Email,draft,126,45,0.35714,0,0,1,0.00794,73.97,0.58706,0.01587,0,0,,7,Oxyfuel
+SqYtYy,NEW POST-PURCHASE FOLLOW UP,WhvLaL,Copy of Email #1 Reiterate community/Mission,Email,draft,328,103,0.31402,2,0.0061,0,0,0,0,0.01524,0,0.00304,,7,Oxyfuel
+SqYtYy,NEW POST-PURCHASE FOLLOW UP,Udqmv3,Email #1 (NEW CUSTOMER) - THANK YOU + UPSELL,Email,draft,338,47,0.13905,4,0.01183,0,0,0,0,0.00296,0.00296,0.63656,,7,Oxyfuel
+SqYtYy,NEW POST-PURCHASE FOLLOW UP,Sgjdk8,Email #1 Loyal customer: personal thank you + big discount,Email,draft,324,64,0.19753,4,0.01235,0,0,0,0,0,0,0.00917,,7,Oxyfuel
+SqYtYy,NEW POST-PURCHASE FOLLOW UP,TApiSq,Email #1 Repeat Customer: Thank You,Email,draft,128,42,0.32812,4,0.03125,0,0,0,0,0.04688,0,0,,7,Oxyfuel
+SqYtYy,NEW POST-PURCHASE FOLLOW UP,XNg8vZ,New Customer: 2nd Purchase Incentive,Email,draft,408,97,0.23775,1,0.00245,0,0,0,0,0.0049,0,0.33005,,7,Oxyfuel
+T4HwCZ,SUNSET FLOW,UFSTsG,Email #1 Not interested Anymore?,Email,live,312,14,0.04487,0,0,0,0,0,0,0,0,0,,7,Oxyfuel
+SzK9L4,MM | Abandoned Checkout Flow DONE,Y6RyS8,Email #1A Nudge + Gratitude/Familiar Geeting,Email,live,8,6,0.75,2,0.25,1,0.125,106.79,13.34875,0,0,0,,4,CanineDrops
+SzK9L4,MM | Abandoned Checkout Flow DONE,WGYH4f,Email #1B Nudge + Support + Welcome Discount reminder,Email,live,106,47,0.4434,8,0.07547,5,0.04717,531.86001,5.01755,0.00943,0,0.05357,,4,CanineDrops
+SzK9L4,MM | Abandoned Checkout Flow DONE,VsHmMy,Email #2A (Item) is ready to Ship,Email,live,7,5,0.71429,1,0.14286,2,0.28571,169.71,24.24429,0,0,0,,4,CanineDrops
+SzK9L4,MM | Abandoned Checkout Flow DONE,UUUPyF,Email #2B P.A.S + Welcome Discount,Email,live,45,22,0.48889,2,0.04444,0,0,0,0,0.02222,0,0.02174,,4,CanineDrops
+SzK9L4,MM | Abandoned Checkout Flow DONE,W3HqfE,Email #3A LAST CHANCE / Say they've been seleted for a discount (Text-based),Email,live,5,2,0.4,1,0.2,0,0,0,0,0,0,0,,4,CanineDrops
+SzK9L4,MM | Abandoned Checkout Flow DONE,TE4efC,"Email #3B TB From Founder, welcome offer expiry",Email,live,109,29,0.26606,4,0.0367,1,0.00917,55.98,0.51358,0.00917,0,0.01802,,4,CanineDrops
+SzK9L4,MM | Abandoned Checkout Flow DONE,SvK5Ge,Email #4B Welcome Offer Expiry,Email,live,106,28,0.26415,2,0.01887,0,0,0,0,0.01887,0,0.01852,,4,CanineDrops
+WBbGuA,MM | Abandoned Checkout SMS DONE,SpiSQZ,Copy of SMS #1,SMS,live,1,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WBbGuA,MM | Abandoned Checkout SMS DONE,UbJLmu,SMS #1,SMS,live,1,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WVKQyC,MM | Browse Abandonment Flow,VjTXLA,Email #1A Keen on snatching this?,Email,live,506,94,0.18577,19,0.03755,3,0.00593,242.34,0.47893,0.00395,0,0.00978,,4,CanineDrops
+WVKQyC,MM | Browse Abandonment Flow,S6RYiq,Email #1B - Still on your mind? Reminder of welcome offer,Email,live,10,4,0.4,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WVKQyC,MM | Browse Abandonment Flow,U3gncU,Email #2A Text base Reminder. Anything we can help with? See What's New>,Email,live,76,41,0.53947,3,0.03947,0,0,0,0,0,0,0,,4,CanineDrops
+WVKQyC,MM | Browse Abandonment Flow,SJ32FU,Email #2B - We're here to help...Any questions? Offer Reminder,Email,live,449,112,0.24944,14,0.03118,1,0.00223,55.98,0.12468,0.00445,0,0.00222,,4,CanineDrops
+WVKQyC,MM | Browse Abandonment Flow,RXMReF,Email #3B - Social Proof + Incentive/discount intro,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WVKQyC,MM | Browse Abandonment Flow,RvcPf3,Email #4B - Text based from founder... Last chance on offer,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+RZGBiG,MM | Browse Abandonment SMS,TN8uPb,Browse Abandonment,SMS,live,5,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WrTBWG,MM | NEW POST-PURCHASE FLOW,T4UBPp,Copy of Email #1 Reiterate community/Mission,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WrTBWG,MM | NEW POST-PURCHASE FLOW,WbZQUw,Copy of Email #1 Reiterate community/Mission,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WrTBWG,MM | NEW POST-PURCHASE FLOW,U2sFPA,Email #1 (NEW CUSTOMER) - THANK YOU + UPSELL,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WrTBWG,MM | NEW POST-PURCHASE FLOW,VyYNhT,Email #1 Loyal customer: personal thank you + big discount,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WrTBWG,MM | NEW POST-PURCHASE FLOW,SFMkeW,Email #1 Repeat Customer: Thank You,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+WrTBWG,MM | NEW POST-PURCHASE FLOW,Rwnvm6,New Customer: 2nd Purchase Incentive,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+UBYbbM,MM | Site Abandon Flow,SKDhjd,Email #1A - Welcome Back! Did you find what you were looking for?,Email,live,57,32,0.5614,1,0.01754,0,0,0,0,0.05263,0,0,,4,CanineDrops
+UBYbbM,MM | Site Abandon Flow,XhUSfS,Email #1B - Category & Best sellers showcase,Email,live,403,55,0.13648,5,0.01241,0,0,0,0,0.00496,0,0.01225,,4,CanineDrops
+UBYbbM,MM | Site Abandon Flow,TWuCbF,Email #2B - Us vs. Them,Email,live,342,36,0.10526,2,0.00585,0,0,0,0,0,0,0.0087,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,UP475V,"Email #1 Welcome Email/ Founder introduction, reiterate offer",Email,live,852,253,0.29695,50,0.05869,18,0.02113,1649.13002,1.9356,0.00587,0,0.01275,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,TUZSBJ,"Email #1 Welcome Email/ Founder introduction, reiterate offer",Email,live,746,126,0.1689,10,0.0134,0,0,0,0,0.00402,0,0.00134,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,TisP4N,"Email #1 Welcome Email/ Founder introduction, reiterate offer Test #2 May 24, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,WTiA5L,"Email #1 Welcome Email/ Founder introduction, reiterate offer Test #2 May 24, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,VEAZLk,"Email #2 Brand story, USP, Bestsellers highlights...Reiterate offer",Email,live,648,123,0.18981,6,0.00926,1,0.00154,103.97,0.16045,0.00309,0,0.00154,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,SrdL9G,Email #3 Social Proof & Testimonials Email,Email,live,549,86,0.15665,6,0.01093,0,0,0,0,0,0,0.00182,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,X6g7Cf,"Email #4 Offer reminder, talk through mission & best sellers Us vs Them.",Email,live,467,85,0.18201,11,0.02355,0,0,0,0,0.00428,0,0.00214,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,Tvbkxj,Email #5 Offer expires today Everything ok? reach out if you need support,Email,live,408,56,0.13725,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+Y3ZVUZ,MM | Welcome Flow DONE,RiLrBb,Resend Email 1 but with different SL/PT Welcome + Discount (could be plain text too),Email,live,559,51,0.09123,5,0.00894,1,0.00179,69.91,0.12506,0,0,0.00534,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,RDazLB,Copy of Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,Ygujxi,Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,STcEZR,Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,X75uDs,SMS #1,SMS,live,12,0,0,5,0.41667,1,0.08333,70.29,5.8575,0.08333,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,R6LMvn,SMS #2,SMS,live,7,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,Wu4s2P,SMS #3,SMS,live,3,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,U4BvTH,SMS #4,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+TwdHCu,MM | Welcome Series SMS DONE,Ve2kMz,SMS #7,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,4,CanineDrops
+RWH3dh,MM | ABANDON CART FLOW DONE,XmLrRN,Email #1A Nudge + Support + Welcome Offer  (Familiar Greeting),Email,live,4,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+RWH3dh,MM | ABANDON CART FLOW DONE,RWtMbQ,Email #1B Nudge + Support + Welcome Offer,Email,live,35,12,0.34286,1,0.02857,0,0,0,0,0,0,0,,6,Nuvary
+RWH3dh,MM | ABANDON CART FLOW DONE,VCydVW,Email #2A Text Based Reminder + Welcome Offer (REPEAT),Email,live,3,1,0.33333,0,0,0,0,0,0,0,0,0,,6,Nuvary
+RWH3dh,MM | ABANDON CART FLOW DONE,S3GhzA,Email #2B Text Based Reminder + Welcome Offer,Email,live,29,11,0.37931,1,0.03448,0,0,0,0,0,0,0,,6,Nuvary
+RWH3dh,MM | ABANDON CART FLOW DONE,RXEhgy,Email #3B What others are saying + Welcome Discount,Email,live,30,9,0.3,0,0,0,0,0,0,0,0.03333,0,,6,Nuvary
+RWH3dh,MM | ABANDON CART FLOW DONE,XmxbQm,Email #4B Last chance to use Discount: Offer + Stock Reminder,Email,live,26,7,0.26923,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,R27XiS,Email #1A Nudge + Familiar Greeting,Email,live,7,5,0.71429,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,Scs7wU,Email #1B Nudge + Support + Welcome Discount,Email,live,54,29,0.53704,7,0.12963,3,0.05556,220.26,4.07889,0.01852,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,U7ycgp,Email #2A (Item) is ready to Ship,Email,live,41,22,0.53659,6,0.14634,2,0.04878,119.83,2.92268,0.04878,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,Uhn2gs,Email #2B Urgency Welcome Discount + Other best sellers,Email,live,26,9,0.34615,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,YaKKfy,Email #3A LAST CHANCE,Email,live,6,2,0.33333,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,SKGkB3,Email #3B Testimonial + Welcome Offer expiring,Email,live,33,10,0.30303,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SPta9x,MM | ABANDON CHECKOUT FLOW,UXRKSQ,"Email #4B TB from Founder, Welcome Offer expiring",Email,live,34,11,0.32353,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SfVtM3,MM | Abandoned Cart,VQMeMZ,SMS #1,SMS,live,2,0,0,1,0.5,0,0,0,0,0,0,0,,6,Nuvary
+VdaW92,MM | Abandoned Checkout,UA9Twp,SMS #1,SMS,live,9,0,0,1,0.11111,0,0,0,0,0.11111,0,0,,6,Nuvary
+UCJuCY,MM | BROWSE ABANDON FLOW DONE,WmHBSM,Email #1A - Keen on snatching this? More familiar tone,Email,live,119,65,0.54622,4,0.03361,1,0.0084,2.95,0.02479,0,0,0,,6,Nuvary
+UCJuCY,MM | BROWSE ABANDON FLOW DONE,Wran9t,Email #1B - Reminder of the product they have,Email,live,158,43,0.27215,4,0.02532,0,0,0,0,0.01266,0,0,,6,Nuvary
+UCJuCY,MM | BROWSE ABANDON FLOW DONE,Tp4pqD,Email #2A - Text based reminder. Anything we can help with? See what's new>,Email,live,106,54,0.50943,3,0.0283,0,0,0,0,0,0,0,,6,Nuvary
+UCJuCY,MM | BROWSE ABANDON FLOW DONE,RSi35q,"Email #2B - Urgency: Our products are selling out, ask if they need help. Cross Sell (Text-based)",Email,live,180,90,0.5,4,0.02222,1,0.00556,69.15,0.38417,0.00556,0,0,,6,Nuvary
+UCJuCY,MM | BROWSE ABANDON FLOW DONE,RuVvtw,Email #3A - Social Proof + Incentive/discount intro,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+UmFSAn,MM | Browse Abandonment,Wa7L6R,Browse Abandonment,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+XBisQy,MM | NEW POST-PURCHASE FLOW,SrTzcL,Copy of Email #1 Reiterate community/Mission,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+XBisQy,MM | NEW POST-PURCHASE FLOW,RY93gV,Copy of Email #1 Reiterate community/Mission,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+XBisQy,MM | NEW POST-PURCHASE FLOW,TprDcX,Email #1 (NEW CUSTOMER) - THANK YOU + UPSELL,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+XBisQy,MM | NEW POST-PURCHASE FLOW,UVXKFg,Email #1 Loyal customer: personal thank you + big discount,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+XBisQy,MM | NEW POST-PURCHASE FLOW,WgD7fU,Email #1 Repeat Customer: Thank You,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+XBisQy,MM | NEW POST-PURCHASE FLOW,WTE9Sx,New Customer: 2nd Purchase Incentive,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+U2Mc7B,MM | SITE ABANDONED FLOW DONE,VYekhr,Email #1A Welcome Back! Did you find what you were looking for?,Email,live,106,60,0.56604,1,0.00943,0,0,0,0,0,0,0,,6,Nuvary
+U2Mc7B,MM | SITE ABANDONED FLOW DONE,Yr72wG,Email #1B (Keep) Category & Best sellers,Email,live,176,46,0.26136,6,0.03409,2,0.01136,144.7,0.82216,0.00568,0.00568,0,,6,Nuvary
+U2Mc7B,MM | SITE ABANDONED FLOW DONE,RusKt9,Email #2 Brand Intro - Us vs. Them,Email,live,139,33,0.23741,2,0.01439,0,0,0,0,0,0,0,,6,Nuvary
+U2Mc7B,MM | SITE ABANDONED FLOW DONE,SeHiC3,Email #2A Plain Text reminder / Bestsellers or new arrivals,Email,live,83,50,0.60241,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,Wra8bY,"Email #1 - Welcome Email, Community welcome, reiterate OFFER (Text-based)",Email,live,222,99,0.44595,15,0.06757,9,0.04054,713.28999,3.21302,0.01802,0,0.00448,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,VSxfeG,Email #1B - Resend Email 1 but with different SL/PT (Text-based),Email,live,76,7,0.09211,1,0.01316,0,0,0,0,0,0,0,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,VvZ4md,"Email #2 - Brand Story, USP, Bestsellers highlight...Reiterate OFFER",Email,live,150,41,0.27333,2,0.01333,1,0.00667,82.52,0.55013,0.00667,0.00667,0,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,RH3gr9,"Email #3 - Social Proof & Testimonials Email, reiterate offer",Email,live,125,40,0.32,3,0.024,0,0,0,0,0,0,0,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,RymZLH,Email #4 - Offer reminder talk thorugh mission & bestsellers. Us vs. Them,Email,live,109,20,0.18349,0,0,0,0,0,0,0,0,0,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,VbQ2Yy,"Email #5 - Offer expires today, Everything ok? Reach out if you need support",Email,live,82,26,0.31707,1,0.0122,1,0.0122,82.52,1.00634,0.0122,0,0,,6,Nuvary
+SjkiZW,MM | WELCOME FLOW DONE,Tc8CCL,"Email #6 - Hail Mary ""You have store credit waiting, expires today"" email",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,SwDJT2,Copy of Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,WJwywB,Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,XTVpqt,Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,Wc8Lfn,SMS #1,SMS,live,38,0,0,19,0.5,9,0.23684,772.97999,20.34158,0.10526,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,RmeTZa,SMS #2,SMS,live,25,0,0,2,0.08,0,0,0,0,0.12,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,UW6F28,SMS #3,SMS,live,12,0,0,1,0.08333,1,0.08333,62.11,5.17583,0,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,YwWs36,SMS #4,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+QNR7HV,MM | Welcome Series SMS,Uj5Cpv,SMS #7,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,6,Nuvary
+VT4sbi,Abandoned Cart Reminder - Shopify Added to Cart Trigger,TtBw4c,"Abandoned Cart, Email #1 [Email #1]",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+VT4sbi,Abandoned Cart Reminder - Shopify Added to Cart Trigger,Wrsesx,"Abandoned Cart, Email #2 [Omni-Channel]",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+VT4sbi,Abandoned Cart Reminder - Shopify Added to Cart Trigger,RFbCxH,SMS Abandoned Cart [SMS #1],SMS,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+W6cGqB,Abandoned Cart Reminder - Shopify Added to Cart Trigger,TEKLhv,"Abandoned Cart, Email #1 [Email #1]",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+W6cGqB,Abandoned Cart Reminder - Shopify Added to Cart Trigger,SqHF4f,"Abandoned Cart, Email #2 [Omni-Channel]",Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+W6cGqB,Abandoned Cart Reminder - Shopify Added to Cart Trigger,XSCzV6,SMS Abandoned Cart [SMS #1],SMS,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,UBhsUS,Email #1 Customer: Keen on snatching this?,Email,live,1158,199,0.17185,6,0.00518,2,0.00173,151.02,0.13041,0.00432,0,0.01026,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,VG53tk,Email #1B (REPEAT) Reminder of the product they have,Email,live,56,32,0.57143,0,0,0,0,0,0,0.05357,0,0,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,S7dgsn,Email #2 Email 2  Text Based Reminder. Anything we can help with? See what’s New >,Email,live,57,43,0.75439,0,0,0,0,0,0,0.03509,0,0,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,TgC7ke,Email #2 Plain Text email asking if they need any help / support. Cross sells too,Email,live,1220,339,0.27787,16,0.01311,7,0.00574,349.42,0.28641,0.0082,0,0.00813,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,SDB4HB,Email #3 Social Proof + Incentive/discount intro,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,RVWKKA,Email #4 Text-base from founder/last chance,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+R2rFTU,MM | ABANDONED BROWSE FLOW,S6x26V,Email #5 Final Boss offer,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),Ubuyr8,Email 1A:Nudge + Support + Welcome Offer,Email,live,186,56,0.30108,4,0.02151,2,0.01075,96.43,0.51844,0,0,0.02105,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),WnpQpG,Email 1B: Abandoned Cart (REPEAT) +OFFER,Email,live,3,1,0.33333,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),TWWUgA,Email 2A: Abandoned Cart + Welcome offer + Urgency,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),YaPHUb,Email 2B: Abandoned Cart (REPEAT) + FINAL OFFER,Email,live,3,1,0.33333,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),RAU8fK,"Email 2B: Abandoned Cart (REPEAT) + FINAL OFFER Test #1 May 12, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),QXT5D8,"Email 2B: Abandoned Cart (REPEAT) + FINAL OFFER Test #1 May 12, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),VKnMM5,Email 3A: Abandoned Cart + What others are saying + Welcome Discount expiring,Email,live,201,48,0.23881,0,0,0,0,0,0,0.00995,0,0.00495,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),QZ5zHQ,Email 3B: Abandoned Cart + What others are saying,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),XxNFhy,Email 4A: Abandoned Cart + Discount Expiring,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+QZ8bSf,MM | ABANDONED CART (FINISHED SKELETON),WUMCEV,Email 5A: [Before we release your order] + FREE SHIPPING,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+Rz4JcA,MM | ABANDONED CHECKOUT,QW3FzX,Email #1A - Welcome Offer + Checkout Urgency,Email,live,371,131,0.3531,19,0.05121,10,0.02695,752.38,2.02798,0.00809,0,0.0288,,5,Moments With Him
+Rz4JcA,MM | ABANDONED CHECKOUT,TmuBH5,Email #1B - Same as non-purchaser/ more personalized,Email,live,2,2,1,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+Rz4JcA,MM | ABANDONED CHECKOUT,UwTsAV,Email #2A - Interpersonal/Founder-based checkout email,Email,live,1,1,1,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+Rz4JcA,MM | ABANDONED CHECKOUT,UM3w75,Email #2B - Interpersonal/Founder (Value based),Email,live,312,141,0.45192,6,0.01923,6,0.01923,361.63,1.15907,0.00321,0,0.01577,,5,Moments With Him
+Rz4JcA,MM | ABANDONED CHECKOUT,Wjjk7q,Email #3A - Discount expires in a few hours (Text based),Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+Rz4JcA,MM | ABANDONED CHECKOUT,TftkVT,Email #4A - Impact that the product is creating,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+Uebs7A,MM | Abandoned Cart SMS,XP3d8y,SMS #1,SMS,live,11,0,0,2,0.18182,0,0,0,0,0.27273,0,0,,5,Moments With Him
+Y74JiH,MM | Abandoned Checkout SMS,S6L3aD,SMS #1,SMS,live,16,0,0,1,0.0625,0,0,0,0,0.125,0,0,,5,Moments With Him
+TYbb3r,MM | Browse Abandonment SMS,Xz2W4p,Browse Abandonment,SMS,live,31,0,0,2,0.06452,0,0,0,0,0.09677,0,0,,5,Moments With Him
+WWsCNx,MM | SITE ABANDONED FLOW,UwZGFr,Email #1A: Category + Bestseller showcase,Email,live,1065,203,0.19061,5,0.00469,3,0.00282,159.45,0.14972,0.00939,0,0.01114,,5,Moments With Him
+WWsCNx,MM | SITE ABANDONED FLOW,Y7RtGp,Email #1B: Brand Intro / Us vs. Them,Email,live,932,378,0.40558,8,0.00858,0,0,0,0,0.00751,0,0.00534,,5,Moments With Him
+WWsCNx,MM | SITE ABANDONED FLOW,QW9VEt,Email #1B: Welcome Back! Did you find what you were looking for?,Email,live,44,26,0.59091,0,0,0,0,0,0,0.02273,0,0,,5,Moments With Him
+WWsCNx,MM | SITE ABANDONED FLOW,SJzPaW,Email #2B: Plain text reminder / bestsellers or new arrivals,Email,live,35,23,0.65714,0,0,0,0,0,0,0.05714,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,TBcjei,Copy of Email #1 - Text based Founder intro (Best Performing format),Email,live,462,217,0.4697,45,0.0974,14,0.0303,715.55,1.54881,0.02165,0,0.00645,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,WKqmYF,Email #1 - Text based Founder intro (Best Performing format),Email,live,498,216,0.43373,47,0.09438,16,0.03213,994.07999,1.99614,0.01004,0,0.00599,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,YtcZ9L,"Email #2A - Brand Story, USP, Bestsellers, highlight...Reiterate offer",Email,live,334,104,0.31138,2,0.00599,0,0,0,0,0.00898,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,U69Bck,"Email #2A - Brand Story, USP, Bestsellers, highlight...Reiterate offer Test #1 May 01, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,VMWemr,"Email #2A - Brand Story, USP, Bestsellers, highlight...Reiterate offer Test #1 May 01, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,Ufkbwb,"Email #3A - Social Proof & Testimonials Emails, reiterate offer",Email,live,242,98,0.40496,2,0.00826,1,0.00413,45.77,0.18913,0.0124,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,W3L52E,"Email #4A - Offer reminder, talk through mission & bestsellers. Us vs. them",Email,live,190,95,0.5,5,0.02632,2,0.01053,87.39,0.45995,0,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,RPTfp5,"Email #5A - Offer expires today, everything ok? reach out if you need support",Email,live,166,78,0.46988,0,0,0,0,0,0,0.01205,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,Y3rTxk,"Email #5A - Offer expires today, everything ok? reach out if you need support Test #1 May 01, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,XWNDbW,"Email #5A - Offer expires today, everything ok? reach out if you need support Test #1 May 01, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+UWYuuc,MM | WELCOME FLOW,RKfZ3F,"Email is #6A - Hail Mary ""You have store credit waiting, expires today""",Email,live,63,28,0.44444,1,0.01587,0,0,0,0,0.01587,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,U7xAGR,Copy of Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,X9ZzsA,Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,VgWrAH,Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,VscWhv,SMS #1,SMS,live,82,0,0,34,0.41463,23,0.28049,1423.26,17.35683,0.10976,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,T2L2ap,SMS #2,SMS,live,55,0,0,4,0.07273,0,0,0,0,0.03636,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,VYAJyJ,SMS #3,SMS,live,30,0,0,1,0.03333,0,0,0,0,0.06667,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,UJyDju,SMS #4,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+RRmbgx,MM | Welcome Series SMS,RG6EzK,SMS #7,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,5,Moments With Him
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,UskGDE,Email #1 Repeat Customer: Keen on snatching this?,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,YaFJ9i,Email #1C Reminder of the product they have,Email,live,1,1,1,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,W4zjj4,Email #2 Email 2  Text Based Reminder. Anything we can help with? See what’s New >,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,Ushu9E,"Email #2 Email 2  Text Based Reminder. Anything we can help with? See what’s New > Test #1 May 04, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,S2Qy2y,"Email #2 Email 2  Text Based Reminder. Anything we can help with? See what’s New > Test #1 May 04, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,Xg7UkT,Email #2 Plain Text email asking if they need any help / support. Cross sells too,Email,live,1,1,1,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,XeYrQF,"Email #2 Plain Text email asking if they need any help / support. Cross sells too Test #1 May 04, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,UPxvHz,"Email #2 Plain Text email asking if they need any help / support. Cross sells too Test #1 May 04, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,U7PFg6,Email #3 Social Proof + Incentive/discount intro,Email,live,1,1,1,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,WWc8ZF,Email #4 Text-base from founder/last chance,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XuNFpp,MM | ABANDONED BROWSE FLOW DONE,UhDF7q,Email #5 - Biggest Discount / Giveaway,Email,draft,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+WUD8Z6,MM | ABANDONED CART DONE,W7bPtq,Email 1A: Nudge + Support + Welcome Offer,Email,live,0,0,0,0,0,0,0,0,0,0,0,1,,3,SteadFast
+WUD8Z6,MM | ABANDONED CART DONE,VCQ3vd,Email 1B: Abandoned Cart (REPEAT) +OFFER,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+WUD8Z6,MM | ABANDONED CART DONE,XkaaBq,Email 2A: Abandoned Cart + Welcome offer + Urgency,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+WUD8Z6,MM | ABANDONED CART DONE,TezBsP,Email 2B: Abandoned Cart (REPEAT) + FINAL OFFER,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+WUD8Z6,MM | ABANDONED CART DONE,Uzut2p,Email 3A: Abandoned Cart + What others are saying + Welcome Discount expiring,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VCg3eg,MM | ABANDONED CHECKOUT DONE,Y8sXGe,Email #1A - Welcome Offer + Checkout Urgency,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VCg3eg,MM | ABANDONED CHECKOUT DONE,Rv9dVx,Email #1B - Same as non-purchaser/ more personalized,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VCg3eg,MM | ABANDONED CHECKOUT DONE,UKAHyp,Email #2A - Discount Expires Tonight / Welcome discount,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VCg3eg,MM | ABANDONED CHECKOUT DONE,WT8SuN,Email #3A - Discount expires in a few hours (Text based),Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VCg3eg,MM | ABANDONED CHECKOUT DONE,TD5SrF,Email #4A - Social Impact + Societal Impact,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REB4fA,MM | ABANDONED CHECKOUT FUNNELISH,XApf3J,Email #1A - Welcome Offer + Checkout Urgency,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REB4fA,MM | ABANDONED CHECKOUT FUNNELISH,UPQ3uG,Email #1B - Same as non-purchaser/ more personalized,Email,live,4,1,0.25,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REB4fA,MM | ABANDONED CHECKOUT FUNNELISH,SdGQyD,Email #2A - Discount Expires Tonight / Welcome discount,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REB4fA,MM | ABANDONED CHECKOUT FUNNELISH,XBzK8s,Email #3A - Discount expires in a few hours (Text based),Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REB4fA,MM | ABANDONED CHECKOUT FUNNELISH,TCLcte,Email #4A - Social Impact + Societal Impact,Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VpdxjM,MM | Abandoned Cart SMS DONE,WPWDer,Copy of SMS #1,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VpdxjM,MM | Abandoned Cart SMS DONE,XbDqQg,SMS #1,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VWzzud,MM | Abandoned Checkout SMS DONE,XF6GA6,Copy of SMS #1,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+VWzzud,MM | Abandoned Checkout SMS DONE,XJZsYG,SMS #1,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+W566aJ,MM | Browse Abandonment SMS,XRvXFd,Browse Abandonment,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+WCvmJr,MM | SITE ABANDONED FLOW DONE,Rn8dyg,Email #1A: Category + Bestseller showcase,Email,live,1298,210,0.16179,23,0.01772,2,0.00154,266.52,0.20533,0.01772,0,0.00536,,3,SteadFast
+WCvmJr,MM | SITE ABANDONED FLOW DONE,TXaEz9,Email #1B: Brand Intro / Us vs. Them,Email,live,1261,196,0.15543,7,0.00555,0,0,0,0,0.0119,0,0.00552,,3,SteadFast
+WCvmJr,MM | SITE ABANDONED FLOW DONE,REgeLq,Email #1B: Welcome Back! Did you find what you were looking for?,Email,live,22,11,0.5,1,0.04545,0,0,0,0,0,0,0,,3,SteadFast
+WCvmJr,MM | SITE ABANDONED FLOW DONE,UvsGEQ,Email #2B: Plain text reminder / bestsellers or new arrivals,Email,live,19,11,0.57895,1,0.05263,0,0,0,0,0,0,0,,3,SteadFast
+WCvmJr,MM | SITE ABANDONED FLOW DONE,UL4KP3,"Email #2B: Plain text reminder / bestsellers or new arrivals Test #1 May 04, 2026 Variation A",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+WCvmJr,MM | SITE ABANDONED FLOW DONE,VVtAGT,"Email #2B: Plain text reminder / bestsellers or new arrivals Test #1 May 04, 2026 Variation B",Email,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,Y6MdGb,Email #1 - Text based Founder intro (Best Performing format),Email,live,1373,258,0.18791,59,0.04297,15,0.01092,2929.85001,2.1339,0.00728,0,0.00866,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,VHDQut,Email #1B - RESEND Welcome 1 (Best performing format),Email,live,1351,206,0.15248,30,0.02221,7,0.00518,1324.95999,0.98073,0.00814,0.00074,0.00589,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,VK93QE,"Email #2A - Brand Story, USP, Bestsellers, highlight...Reiterate offer",Email,live,1266,186,0.14692,7,0.00553,0,0,0,0,0.00395,0,0.00079,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,SfYxdP,"Email #3A - Social Proof & Testimonials Emails, reiterate offer",Email,live,1242,214,0.1723,7,0.00564,0,0,0,0,0.00886,0.00081,0.00241,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,Wx4R6D,"Email #4A - Offer reminder, talk through mission & bestsellers. Us vs. them",Email,live,1231,190,0.15435,14,0.01137,0,0,0,0,0.00812,0,0.00162,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,XjXVfc,"Email #5A - Offer expires today, everything ok? reach out if you need support",Email,live,1213,194,0.15993,12,0.00989,2,0.00165,336.52,0.27743,0.0066,0,0.00247,,3,SteadFast
+XUnHEW,MM | WELCOME FLOW DONE,W5VPZW,"Email is #6A - Hail Mary ""You have store credit waiting, expires today""",Email,live,578,78,0.13495,4,0.00692,0,0,0,0,0.00519,0,0.00173,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,ScUi6t,Copy of Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,UCmedz,Copy of Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,VML57r,Copy of SMS #2,SMS,live,0,0,0,0,0,0,0,0,0,0,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,TsWpjH,SMS #1,SMS,live,147,0,0,41,0.27891,7,0.04762,1022.28,6.95429,0.08844,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,X3NakF,SMS #2,SMS,live,122,0,0,4,0.03279,1,0.0082,179,1.46721,0.05738,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,SPVkH6,SMS #3,SMS,live,114,0,0,1,0.00877,0,0,0,0,0.04386,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,WqM7J4,SMS #4,SMS,live,107,0,0,4,0.03738,0,0,0,0,0,0,0,,3,SteadFast
+REwvPe,MM | Welcome Series SMS DONE,TZkbAW,SMS #7,SMS,live,54,0,0,4,0.07407,0,0,0,0,0.05556,0,0,,3,SteadFast
