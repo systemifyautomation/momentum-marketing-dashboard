@@ -433,7 +433,11 @@ export default function ClientOverviewTable({
           <tbody>
             {loading
               ? Array.from({ length: 5 }).map((_, i) => <SkeletonRow key={i} />)
-              : clients.map((client) => {
+              : [...clients].sort((a, b) => {
+                  const pctA = overviewData[a.id]?.attributedPct ?? -1;
+                  const pctB = overviewData[b.id]?.attributedPct ?? -1;
+                  return pctB - pctA;
+                }).map((client) => {
                   const d = overviewData[client.id];
                   const target = client.attributionGoal ?? 40;
                   const isExpanded = expandedClientId === client.id;
